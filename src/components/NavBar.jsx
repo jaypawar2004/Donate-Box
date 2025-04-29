@@ -24,11 +24,11 @@ const NavBar = () => {
           <a href="/" className="text-gray-700 hover:text-red-600">
             Home
           </a>
-          <a href="#" className="text-gray-700 hover:text-red-600">
+          {/* <a href="#" className="text-gray-700 hover:text-red-600">
             Donate
-          </a>
+          </a> */}
           <a href="/fundraise" className="text-gray-700 hover:text-red-600">
-            Fundraiser
+          Donate
           </a>
           <a href="/about-us" className="text-gray-700 hover:text-red-600">
             About Us
