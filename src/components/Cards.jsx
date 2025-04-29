@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Cards = () => {
   // Dummy data for cards (match image design)
@@ -57,6 +58,8 @@ const Cards = () => {
   return (
     <div className="container mx-auto py-5">
     
+    <Link to={"/fd"}>
+    
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {cardData.slice(0, visibleCards).map((card) => (
           <div
@@ -88,7 +91,7 @@ const Cards = () => {
           </div>
         ))}
       </div>
-
+      </Link>
       {/* View All Button */}
       {cardData.length > visibleCards && (
         <div className="text-center mt-4">

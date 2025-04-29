@@ -13,6 +13,7 @@ import FundraiseDetails from "./Fundraiser/FundraiseDetails";
 import Profile from "./Profile/Profile";
 import TermsAndConditions from "./Policy/TermsAndConditions";
 import PrivacyP from "./Policy/PrivacyP";
+import ScrollToTop from "./TopScrolling/ScrollToTop";
 // import { Home } from "lucide-react";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
   return (
     <>
     <div>
+      <ScrollToTop />
       <NavBar />
       <Routes>
         <Route path="/" element={<LayOut />} />
