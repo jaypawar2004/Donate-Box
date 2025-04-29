@@ -21,32 +21,47 @@ const NavBar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-5 items-center">
-          <a href="/" className="text-gray-700 hover:text-red-600">
+          <Link to={"/"}>
+          <a href="#" className="text-gray-700 hover:text-red-600">
             Home
           </a>
+          
+          </Link>
           {/* <a href="#" className="text-gray-700 hover:text-red-600">
             Donate
           </a> */}
-          <a href="/fundraise" className="text-gray-700 hover:text-red-600">
+          <Link to={"/fundraise"}>
+          <a href="" className="text-gray-700 hover:text-red-600">
           Donate
           </a>
-          <a href="/about-us" className="text-gray-700 hover:text-red-600">
+          
+          </Link>
+          <Link to={"/about-us"}>
+          <a href="" className="text-gray-700 hover:text-red-600">
             About Us
           </a>
-          <a href="/contact" className="text-gray-700 hover:text-red-600">
+          
+          </Link>
+          <Link to={"/contact"}>
+          <a href="" className="text-gray-700 hover:text-red-600">
             Contact Us
           </a>
+          
+          </Link>
+          <Link to={"/login"}>
+          
           <a
             href="/login
         "
           >
             <button
-              to={"/login"}
+              to={""}
               className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
             >
               Login / Signup
             </button>
           </a>
+          </Link>
           <Link to={"/profile"}>
           <User className="w-10 h-10 text-gray-700 bg-red-500 p-3 rounded-full hover:text-red-600 cursor-pointer" />
           
