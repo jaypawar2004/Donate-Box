@@ -10,7 +10,7 @@ const NavBar = () => {
         <div className="flex items-center space-x-2 ">
         <Link to={"/"}>
           <img
-            src="./src/assets/images/logo.png"
+            src="/public/images/logo.png"
             alt="Logo"
             className="lg:h-[4vw] h-[10vh] object-cover"
           />

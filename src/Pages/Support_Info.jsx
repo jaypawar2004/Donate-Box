@@ -36,7 +36,7 @@ const Support_Info = () => {
             <div className="circal relative w-[7.5vw] bg-[#FDF5F5] h-[14vh] rounded-full flex items-center justify-center ">
               <img
                 className="object-center w-[4vw] items-center text-center "
-                src="/src/assets/images/BoxLogo.png"
+                src="/public/images/BoxLogo.png"
                 alt=""
               />
               <span className="absolute bottom-[-25%]">hello</span>
@@ -44,7 +44,7 @@ const Support_Info = () => {
             <div className="circal relative w-[7.5vw] bg-[#FDF5F5] h-[14vh] rounded-full flex items-center justify-center ">
               <img
                 className="object-center w-[4vw] items-center text-center"
-                src="/src/assets/images/BoxLogo2.png"
+                src="/public/images/BoxLogo2.png"
                 alt=""
               />
               <span className="absolute bottom-[-25%]">hello</span>
@@ -54,7 +54,7 @@ const Support_Info = () => {
             <div className="circal relative w-[7.5vw] bg-[#FDF5F5] h-[14vh] rounded-full flex items-center justify-center ">
               <img
                 className="object-center w-[4vw] items-center text-center"
-                src="/src/assets/images/BoxLogo3.png"
+                src="/public/images/BoxLogo3.png"
                 alt=""
               />
               <span className="absolute bottom-[-25%]">hello</span>
@@ -62,7 +62,7 @@ const Support_Info = () => {
             <div className="circal relative w-[7.5vw] bg-[#FDF5F5] h-[14vh] rounded-full  flex items-center justify-center">
               <img
                 className="object-center w-[4vw] items-center text-center"
-                src="/src/assets/images/BoxLogo4.png"
+                src="/public/images/BoxLogo4.png"
                 alt=""
               />
               <span className="absolute bottom-[-25%]">hello</span>

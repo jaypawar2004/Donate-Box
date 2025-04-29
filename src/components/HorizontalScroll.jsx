@@ -1,11 +1,11 @@
 import React from "react";
 import "./HorizontalScroll.css"; // Animation aur gradient ke liye extra CSS
 // import NavBar from "./NavBar"
-import logo1 from '../assets/images/Collaboration logo1.png';
-import logo2 from '../assets/images/c_logo2.png';
-import logo3 from '../assets/images/C_logo3.png';
-import logo4 from '../assets/images/C_logo4.png';
-import logo5 from '../assets/images/C_logo5.png';
+import logo1 from '/public/images/logo.png';
+import logo2 from '/public/images/c_logo2.png';
+import logo3 from '/public/images/C_logo3.png';
+import logo4 from '/public/images/C_logo4.png';
+import logo5 from '/public/images/C_logo5.png';
 import Footer from "./Footer";
 
 const logos = [logo1, logo2, logo3, logo4, logo5,

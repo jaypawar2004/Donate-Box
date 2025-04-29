@@ -23,7 +23,7 @@ const GetInTouch = () => {
             >
               <div className="w-14 h-14 flex items-center justify-center bg-green-100 rounded-full">
                 <img
-                  src="/src/assets/images/WhatsApp.png"
+                  src="/public/images/WhatsApp.png"
                   alt="WhatsApp"
                   className="w-8 h-8 object-contain"
                 />

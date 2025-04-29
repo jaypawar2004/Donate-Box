@@ -101,13 +101,13 @@ const About_Us = () => {
         <div className="w-[50%] relative h-[100%] bg-[#9DAEC8]">
           <img
           className="w-full h-[90%] object-cover object-center"
-            src="/src/assets/images/AboutImg.png"
+            src="/public/images/AboutImg.png"
             alt=""
           />
         </div>
         <div className="w-[50%] absolute  right-0 bottom-0 h-[100%] bg-[#DCA99D]">
           <img className="w-[100%] absolute h-[90%] object-cover object-center top-[8vh]"
-            src="/src/assets/images/AboutImg2.png"
+            src="/public/images/AboutImg2.png"
             alt=""
           />
         </div>

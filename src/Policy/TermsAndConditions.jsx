@@ -8,7 +8,7 @@ const TermsAndConditions = () => {
           <div
             className={`w-full h-full bg-cover bg-center`}
             style={{
-              backgroundImage: `url("/src/assets/images/slider.jfif")`,
+              backgroundImage: `url("/public/images/slider.jfif")`,
               width: "100%",
               height: "100%",
               objectPosition: "center",

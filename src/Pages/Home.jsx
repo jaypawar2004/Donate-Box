@@ -5,19 +5,19 @@ const Home = () => {
   const slides = [
     {
       id: 1,
-      image: "/src/assets/images/slider.jfif",
+      image: "/public/images/slider.jfif",
       title: "Help The Poor To Build A Better World",
       subtitle: "Your donation can help educate thousands of people and make the world more beautiful.",
     },
     {
       id: 2,
-      image: "/src/assets/images/slider.jfif",
+      image: "/public/images/slider.jfif",
       title: "Support Education for All",
       subtitle: "Together, we can change lives with your generous support.",
     },
     {
       id: 3,
-      image: "/src/assets/images/slider.jfif",
+      image: "/public/images/slider.jfif",
       title: "Create a Brighter Future",
       subtitle: "Every donation brings hope to those in need.",
     },
