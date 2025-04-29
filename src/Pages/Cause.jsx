@@ -9,7 +9,7 @@ const causes = [
   { label: "EDUCATION", icon: "🎓" },
   { label: "CHILDREN", icon: "😃" },
   { label: "HUNGER", icon: "🍲" },
-  { label: "HANDICAPABLE", icon: "♿" },
+  { label: "HANDICAP", icon: "♿" },
 ];
 
 const Cause = () => {

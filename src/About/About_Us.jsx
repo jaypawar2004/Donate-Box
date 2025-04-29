@@ -101,13 +101,13 @@ const About_Us = () => {
         <div className="w-[50%] relative h-[100%] bg-[#9DAEC8]">
           <img
           className="w-full h-[90%] object-cover object-center"
-            src="https://images.unsplash.com/photo-1526816619231-e426e697193e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG1vZGVsc3xlbnwwfDB8MHx8fDA%3D"
+            src="/src/assets/images/AboutImg.png"
             alt=""
           />
         </div>
         <div className="w-[50%] absolute  right-0 bottom-0 h-[100%] bg-[#DCA99D]">
           <img className="w-[100%] absolute h-[90%] object-cover object-center top-[8vh]"
-            src="https://images.unsplash.com/photo-1643490743293-1f1de8e3d68a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG1vZGVsc3xlbnwwfDB8MHx8fDA%3D"
+            src="/src/assets/images/AboutImg2.png"
             alt=""
           />
         </div>

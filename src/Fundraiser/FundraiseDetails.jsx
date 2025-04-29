@@ -1,5 +1,6 @@
 import React from "react";
 import TextMarquee from "../components/TextMarquee";
+import { SiPhonepe } from "react-icons/si";
 import { LuHeartHandshake, LuMessageCircleHeart } from "react-icons/lu";
 import { FaGooglePay } from "react-icons/fa";
 import "swiper/css";
@@ -9,9 +10,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { MdOutlineSecurity } from "react-icons/md";
 import Cards from "../components/Cards";
-import { Slide } from "@mui/material";
 
-const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 }) => {
+
+const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 } ) => {
   const radius = 50 - strokeWidth / 2;
   const pathDescription = `
     M 50,50 m 0,-${radius}
@@ -33,11 +34,11 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 }) => {
   ];
   return (
     <>
-      <div className="bg-white p-10">
-        <div className="w-full h-full py-10"></div>
-        <section className="">
+      <div className="bg-white pt-10">
+        <div className="w-full h-full pt-10"></div>
+        <section className="w-full">
           <TextMarquee />
-          <h1 className="text-2xl bg-white w-[80%] m-auto font-bold text-center">
+          <h1 className="text-2xl bg-white w-[80%] m-auto font-bold text-start">
             Bentley Owen Raphael is a brave 9-year-old boy fighting the toughest
             battle of his life. Diagnosed with relapsed Acute Lymphoblastic
             Leukaemia.
@@ -47,20 +48,20 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 }) => {
           {/* Left Section */}
           <div className="example w-[60%] scroll flex flex-col overflow-y-auto">
             {/* Swiper Section */}
-            <div className="w-full min-h-[75vh] ">
+            <div className="w-full min-h-[75vh] rounded-2xl">
               <Swiper
                 navigation={true}
                 modules={[Navigation, Autoplay]} // Add Autoplay module
                 loop={true}
                 autoplay={{ delay: 3000 }}
-                className="mySwiper"
+                className="mySwiper rounded-2xl"
               >
                 {slides.map((slide) => (
                   <SwiperSlide key={slide.id}>
                     <img
                       src={slide.image}
                       alt={`Slide ${slide.id}`}
-                      className="w-full h-[75vh] object-cover"
+                      className="w-full h-[75vh] rounded-2xl object-cover"
                     />
                   </SwiperSlide>
                 ))}
@@ -183,7 +184,7 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 }) => {
                 help this family through their darkest hour. Every contribution
                 counts.
               </p>
-<br />
+              <br />
               <p className="text-lg">
                 The Impact of Your Support
                 <br />
@@ -291,13 +292,14 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 }) => {
               ))}
             </div>
             <div className="flex items-center justify-center bg-[#FFFAFA]">
-            <button className="border-3 py-4 w-[40%] m-auto  rounded-xl border-red-300 text-2xl text-red-300">View All Supporters</button>
-
+              <button className="border-3 py-4 w-[40%] m-auto  rounded-xl border-red-300 text-2xl text-red-300">
+                View All Supporters
+              </button>
             </div>
           </div>
 
           {/* Right Section */}
-          <div className="w-[40%]  p-10 ">
+          <div className="w-[40%]  p-5 px-10 ">
             <div className="w-full flex items-center justify-between text-lg">
               <h1
                 className="font-bold
@@ -308,8 +310,8 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 }) => {
               <h3 className="underline">1000 Donars</h3>
             </div>
             <div className="w-full  -ml-5">
-              <div className="w-full h-[400px] flex flex-col justify-center items-center ">
-                <div className="grid grid-cols-3 items-center justify-start">
+              <div className="w-full h-[220px] flex flex-col justify-center items-center ">
+                <div className="grid grid-cols-3  items-center justify-start">
                   <div className="flex justify-center items-center p-4">
                     <svg
                       className="w-24 h-24 md:w-32 md:h-32"
@@ -343,7 +345,7 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 }) => {
                       </text>
                     </svg>
                   </div>
-                  <div>
+                  <div className="w-full">
                     <h1 className="text-xl font-bold">Raised</h1>
                     <h2 className="text-lg">
                       Rs.50,000 of{" "}
@@ -351,70 +353,106 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 }) => {
                     </h2>
                   </div>
                 </div>
-                {/* <div>
-              <a className="px-5 py-3 bg-gray-200 rounded-4xl" href="#">
-              1000 Donors
-              </a>
-              </div> */}
-                <button className="text-white bg-red-500 px-6 py-4 rounded-full -mt-[25v] w-1/2 text-center m-auto shadow-2xl">
+                <button className="text-white bg-red-500 px-6 py-4 rounded-full w-1/2 text-center m-auto shadow-2xl">
                   {" "}
                   Donate Now
                 </button>
               </div>
             </div>
-            <div className="-mt-[8vh]">
+            <div className="pt-10">
               <h1 className="text-zinc-300 text-lg">Give Through:</h1>
               <div>
-                <h1 className="font-semibold text-xl">UPI</h1>
+                <h1 className="font-semibold text-xl py-5">UPI</h1>
                 <div className="w-full flex items-center justify-between  h-[15px] mb-10 mt-10">
-                  <div> 
-                  <img width="48" height="48" src="https://img.icons8.com/material-rounded/48/phone-pe.png" alt="phone-pe"/>
-                   <h1>PhonePe</h1>
-                    </div>
-                  <div className="">
-                  <img width="48" height="48" src="https://img.icons8.com/color/48/google-pay.png" alt="google-pay"/>
-<h1>G Pay</h1>
+                  <div>
+                  {/* <img width="48" height="48" src="https://img.icons8.com/material-rounded/48/phone-pe.png" alt="phone-pe"/> */}
+                  <SiPhonepe  className="text-5xl text-[#673AB7]"/>
+                    <h1>PhonePe</h1>
                   </div>
-                  
+                  <div className="">
+                    <img
+                      width="48"
+                      height="48"
+                      src="https://img.icons8.com/color/48/google-pay.png"
+                      alt="google-pay"
+                    />
+                    <h1>G Pay</h1>
+                  </div>
+
                   <div>
-                  <img width="48" height="48" src="https://img.icons8.com/color/96/bhim.png" alt="bhim"/>
+                    <img
+                      width="48"
+                      height="48"
+                      src="https://img.icons8.com/color/96/bhim.png"
+                      alt="bhim"
+                    />
                     Bhim UPI
-                    </div>
+                  </div>
                   <div>
-                  <img width="64" height="64" src="https://img.icons8.com/puffy-filled/64/more--v3.png" alt="more--v3"/>
+                    <img
+                      width="50"
+                      height="64"
+                      src="https://img.icons8.com/puffy-filled/64/more--v3.png"
+                      alt="more--v3"
+                    />
                     Others
-                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div>
-            <h1 className="capitalize mb-5 font-semibold text-xl">Other Options</h1>
+              <h1 className="capitalize py-5 font-semibold text-xl">
+                Other Options
+              </h1>
 
               <div>
-                <div className="w-full text-lg flex items-center justify-between h-[15px]">
+                <div className="w-full text-lg py-10 flex items-center justify-between h-[15px]">
                   <div>
-                  <img width="48" height="96" src="https://img.icons8.com/color/96/paytm.png" alt="paytm"/>
+                    <img
+                      width="48"
+                      height="96"
+                      src="https://img.icons8.com/color/96/paytm.png"
+                      alt="paytm"
+                    />
                     Paytm
-                    </div>
+                  </div>
                   <div>
-                  <img width="48" height="94" src="https://img.icons8.com/3d-fluency/94/card-verification-value.png" alt="card-verification-value"/>
-                    Cr/Dr Cards</div>
+                    <img
+                      width="44"
+                      height="94"
+                      src="https://img.icons8.com/3d-fluency/94/card-verification-value.png"
+                      alt="card-verification-value"
+                    />
+                    Cr/Dr Cards
+                  </div>
                   <div>
-                  <img width="48" height="64" src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/external-online-banking-finance-kiranshastry-lineal-kiranshastry-1.png" alt="external-online-banking-finance-kiranshastry-lineal-kiranshastry-1"/>
-                    Net Banking</div>
+                    <img
+                      width="48"
+                      height="64"
+                      src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/external-online-banking-finance-kiranshastry-lineal-kiranshastry-1.png"
+                      alt="external-online-banking-finance-kiranshastry-lineal-kiranshastry-1"
+                    />
+                    Net Banking
+                  </div>
                   <div>
-                  <img width="48" height="96" src="https://img.icons8.com/color/96/gift-card.png" alt="gift-card"/>
-                    Gift Cards</div>
+                    <img
+                      width="48"
+                      height="96"
+                      src="https://img.icons8.com/color/96/gift-card.png"
+                      alt="gift-card"
+                    />
+                    Gift Cards
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-full h-[50vh] bg-[#FBFAF8]">
+        <div className="w-full h-[50vh] bg-[#FBFAF8] p-10">
           <h1 className="text-2xl">
             Your easy, powerFul, and trusted home for help
           </h1>
-          <div className="w-full h-full flex ">
+          <div className="w-full h-full flex">
             <div className="w-[33.4%] h-full  flex flex-1/2 items-center justify-center ">
               <LuMessageCircleHeart className="text-[5vw] font-thin" />
               <h2>
@@ -441,7 +479,7 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 }) => {
           </div>
         </div>
 
-        <div className="w-full h-auto mt-10">
+        <div className="w-full h-auto mt-10 p-10">
           <h1 className="text-4xl">
             Support <span className="text-red-500"> More Causes</span>
           </h1>

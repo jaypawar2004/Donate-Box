@@ -50,7 +50,7 @@ const HorizontalScroll = () => {
 
 <div className=" w-full h-[60vh] flex bg-white mt-[10vh]">
   <div className="w-[50%] relative h-full flex items-center justify-center">
-    <img className="w-[80%] relative -right-30 rounded-2xl shadow-xl" src="https://images.unsplash.com/photo-1743485237407-e00bfb75163e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+    <img className="w-[80%] h-[80%] relative -right-30 rounded-2xl shadow-xl" src="https://images.unsplash.com/photo-1743485237407-e00bfb75163e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
   </div>
   <div className="w-[40%] h-full bg-[#F8F4E9] flex flex-col items-center justify-center space-y-4">
     <h1 className="text-2xl font-bold">Make the world better with us</h1>

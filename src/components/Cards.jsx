@@ -58,7 +58,7 @@ const Cards = () => {
   return (
     <div className="container mx-auto py-5">
     
-    <Link to={"/fd"}>
+   
     
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {cardData.slice(0, visibleCards).map((card) => (
@@ -84,14 +84,16 @@ const Cards = () => {
               <p className="text-sm text-gray-600 mt-1">
                 {card.achieved} <span className="text-gray-500">Achieved</span> / {card.goal}
               </p>
-              <button className="bg-red-500 text-white px-4 py-2 rounded-lg mt-2 hover:bg-red-600 transition w-full">
+              <Link to={"/fd"}>
+              <button className="bg-red-500 cursor-pointer text-white px-4 py-2 rounded-lg mt-2 hover:bg-red-600 transition w-full">
                 DONATE NOW
               </button>
+              </Link>
             </div>
           </div>
         ))}
       </div>
-      </Link>
+      
       {/* View All Button */}
       {cardData.length > visibleCards && (
         <div className="text-center mt-4">
