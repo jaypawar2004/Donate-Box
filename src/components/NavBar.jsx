@@ -8,11 +8,14 @@ const NavBar = () => {
       <div className="max-w-7xl mx-auto py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2 ">
+        <Link to={"/"}>
           <img
             src="./src/assets/images/logo.png"
             alt="Logo"
             className="lg:h-[4vw] h-[10vh] object-cover"
           />
+        
+        </Link>
           {/* <span className="text-xl font-semibold text-gray-800">MyLogo</span> */}
         </div>
 

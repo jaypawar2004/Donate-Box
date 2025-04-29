@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import {
     Mail,
     Phone,
@@ -24,14 +25,19 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <Link to={"/privacy_policy"}
+              >
+              <a href="" className="hover:underline">
                 Privacy Policy
               </a>
+              </Link>
             </li>
             <li>
+              <Link to={"/terms_and_conditions"}>
               <a href="#" className="hover:underline">
                 Terms & Conditions
               </a>
+              </Link>
             </li>
           </ul>
           <h3 className="font-semibold text-lg mt-6 mb-3">Follow Us</h3>

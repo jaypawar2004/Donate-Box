@@ -26,7 +26,7 @@ const LayOut = () => {
         <WallOfLove />
         <Blog />
         <GetInTouch />
-        <Footer />
+        
     </div>
   )
 }

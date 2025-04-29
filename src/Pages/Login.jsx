@@ -184,7 +184,7 @@ const Login = () => {
      
      
     </div>
-    <Footer />
+    {/* <Footer /> */}
     </>
 
   );

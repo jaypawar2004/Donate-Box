@@ -61,7 +61,7 @@ const HorizontalScroll = () => {
     
   </div>
 </div>
-<Footer />
+{/* <Footer /> */}
     </div>
   );
 };

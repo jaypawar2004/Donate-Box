@@ -8,7 +8,7 @@ import HorizontalScroll from "../components/HorizontalScroll";
 
 const About_Us = () => {
   return (
-    <div className="">
+    <div className="w-full h-auto">
       <NavBar />
       <br />
       <AboutComponents />

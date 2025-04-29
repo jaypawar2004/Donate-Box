@@ -17,7 +17,7 @@ const Support_Info = () => {
               monthly donation program that ensures patients in India receive
               timely access to life-saving treatment.{" "}
             </p>
-            <button className="py-3 px-6 border-2 rounded-lg mt-[3.2vw] border-white bg-[#F11914]  flex items-center justify-center ">
+            <button className="py-3 px-6 border-2 rounded-lg mt-[3.2vw] border-white bg-[#F11914] text-white flex items-center justify-center ">
               <svg
                 className="mr-2"
                 width={24}

@@ -11,6 +11,8 @@ import Fundraise from "./Fundraiser/Fundraise";
 import Footer from "./components/Footer";
 import FundraiseDetails from "./Fundraiser/FundraiseDetails";
 import Profile from "./Profile/Profile";
+import TermsAndConditions from "./Policy/TermsAndConditions";
+import PrivacyP from "./Policy/PrivacyP";
 // import { Home } from "lucide-react";
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
         <Route path="/fd" element={<FundraiseDetails/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/login" element={<Login />}/>
+        <Route path="/terms_and_conditions" element={<TermsAndConditions />}/>
+        <Route path="/privacy_policy" element={<PrivacyP />} />
       </Routes>
       
       <Footer />

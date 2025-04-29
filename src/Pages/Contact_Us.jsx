@@ -4,7 +4,7 @@ import NavBar from '../components/NavBar'
 import { FaLocationDot } from 'react-icons/fa6'
 import { MdEmail } from 'react-icons/md'
 import { FaPhoneAlt } from 'react-icons/fa'
-import Footer from '../components/Footer'
+// import Footer from '../components/Footer'
 // import { FaLocationDot } from "react-icons/fa6";
 const Contact_Us = () => {
   return (
@@ -141,7 +141,7 @@ const Contact_Us = () => {
         style={{ border: 0 }}
       ></iframe>
     </div>
-    <Footer />
+    {/* <Footer /> */}
     </div>
   )
 }
