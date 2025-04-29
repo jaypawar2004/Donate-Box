@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Menu, X, User, Link } from "lucide-react";
-
+import { Menu, X, User  } from "lucide-react";
+import {Link} from "react-router-dom";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -44,7 +44,10 @@ const NavBar = () => {
               Login / Signup
             </button>
           </a>
-          <User className="w-6 h-6 text-gray-700 hover:text-red-600 cursor-pointer" />
+          <Link to={"/profile"}>
+          <User className="w-10 h-10 text-gray-700 bg-red-500 p-3 rounded-full hover:text-red-600 cursor-pointer" />
+          
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}

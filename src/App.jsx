@@ -10,6 +10,7 @@ import Login from "./Pages/Login";
 import Fundraise from "./Fundraiser/Fundraise";
 import Footer from "./components/Footer";
 import FundraiseDetails from "./Fundraiser/FundraiseDetails";
+import Profile from "./Profile/Profile";
 // import { Home } from "lucide-react";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/contact" element={<Contact_Us />}/>
         <Route path="/fundraise" element={<Fundraise/>}/>
         <Route path="/fd" element={<FundraiseDetails/>}/>
+        <Route path="/profile" element={<Profile/>}/>
         <Route path="/login" element={<Login />}/>
       </Routes>
       
