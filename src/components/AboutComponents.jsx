@@ -6,7 +6,7 @@ const AboutComponents = () => {
       <div
         className={`w-full h-full bg-cover bg-center`}
         style={{
-          backgroundImage: `url("/public/images/slider.jfif")`,
+          backgroundImage: `url("/images/slider.jfif")`,
           width: "100%",
           height: "100%",
           objectPosition: "center",

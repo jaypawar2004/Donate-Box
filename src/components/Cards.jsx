@@ -6,7 +6,7 @@ const Cards = () => {
   const cardData = [
     {
       id: 1,
-      image: "https://plus.unsplash.com/premium_photo-1744826574464-0fc82fc6903e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "https://plus.unsplash.com/premium_photo-1699114250038-1c6048f12264?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "Neurofibromatosis A Genetic Disorder Causing Tumor Growth",
       daysLeft: "3 Days Left to Go",
       donors: 235,
@@ -26,7 +26,7 @@ const Cards = () => {
     },
     {
       id: 3,
-      image: "https://plus.unsplash.com/premium_photo-1744826574464-0fc82fc6903e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "https://plus.unsplash.com/premium_photo-1699114250038-1c6048f12264?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "Neurofibromatosis A Genetic Disorder Causing Tumor Growth",
       daysLeft: "3 Days Left to Go",
       donors: 235,

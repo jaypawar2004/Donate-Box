@@ -19,7 +19,7 @@ const About_Us = () => {
           <span className="text-red-600 ">Today’s Needs</span>{" "}
         </h1>
 
-        <div className="h-1 w-20 mb-10 mt-5 bg-red-600 m-auto"></div>
+        <div className="h-1 w-20 mb-10 mt-5 bg-[#E53935] m-auto"></div>
 
         <p className="p text-xl">
           We recognized this long before the pandemic. Even then, we were aware
@@ -49,11 +49,11 @@ const About_Us = () => {
         </p>
       </div>
 
-      <div className="w-full h-[80vh] flex">
-        <div className="w-[90%] h-[80%] text-white bg-red-500 p-30">
-          <h1 className="">Health Comes First</h1>
-          <div className="h-1 bg-white w-30 rounded-full"> </div>
-          <p>
+      <div className="lg:w-full lg:h-[80vh] lg:flex">
+        <div className="lg:w-[90%] lg:h-[80%] h-[100%] text-white bg-[#E53935] lg:p-30 p-5">
+          <h1 className="lg:text-xl text-3xl">Health Comes First</h1>
+          <div className="h-1 bg-white w-30 rounded-full"></div>
+          <p className="lg:text-lg text-xl">
             Sanyogati is dedicated to supporting a wide range of causes, from
             nonprofit initiatives to personal and creative endeavors. However,
             in today's post-pandemic world, access to healthcare funding is not
@@ -65,12 +65,12 @@ const About_Us = () => {
         </div>
         {/* <div className="w-[50%] h-[40 30 50 50] bg-green-800 "></div> */}
         <div
-          className="w-full h-full bg-blue-600"
+          className="lg:w-full lg:h-full w-[100%] h-[80%] bg-blue-600"
           style={{
             clipPath: "polygon(0 0%, 100% 0%, 100% 80%, 58% 94%, 0 80%)",
           }}
         >
-          {/* Tumhara content yahan likhna hai */}
+          {/* content yahan likhna hai */}
           <div className="text-white text-3xl font-bold">
             <img
               src="https://images.unsplash.com/photo-1744566917617-452209a98498?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -79,15 +79,15 @@ const About_Us = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center">
+      <div className="lg:flex lg:flex-col lg:items-center lg:justify-center">
         <h1 className="text-3xl font-bold text-center leading-10">
           Our <span className="text-red-500">Focus</span>{" "}
         </h1>
-        <div className="w-20 m-auto h-1 rounded-full mt-5 bg-red-600 "></div>
-        <h3 className="text-2xl text-center mt-10">
+        <div className="w-20 m-auto h-1 rounded-full mt-5 bg-[#E53935] "></div>
+        <h3 className="lg:text-2xl text-2xl text-center mt-10">
           Healthcare That Saves Lives Now and Builds a Safer Future.
         </h3>
-        <p className="text-center text-lg w-1/2 mt-10">
+        <p className="lg:text-center lg:text-lg lg:w-1/2 mt-10 text-xl text-center">
           We are crafting cutting edge technology and financial solutions to
           enable individuals to raise funds for medical emergencies, critical
           illnesses, and a wide range of social and personal causes. Our
@@ -95,25 +95,26 @@ const About_Us = () => {
           contributions, transformation fundraisers, and collective action.
         </p>
       </div>
-      <div className="w-full relative mt-10 h-[80vh] flex bg-red-500 ">
+      <div className="lg:w-full lg:relative lg:mt-10 lg:h-[80vh] lg:flex  w-full h-auto">
         <div className="bg-blue-200 w-[50]"></div>
         <div></div>
-        <div className="w-[50%] relative h-[100%] bg-[#9DAEC8]">
+        <div className="lg:w-[50%] relative h-[100%] bg-[#9DAEC8]">
           <img
           className="w-full h-[90%] object-cover object-center"
-            src="/public/images/AboutImg.png"
+            src="/images/AboutImg.png"
             alt=""
           />
         </div>
-        <div className="w-[50%] absolute  right-0 bottom-0 h-[100%] bg-[#DCA99D]">
-          <img className="w-[100%] absolute h-[90%] object-cover object-center top-[8vh]"
-            src="/public/images/AboutImg2.png"
+        <div className="lg:w-[50%] lg:absolute  right-0 bottom-0 h-[100%] bg-[#DCA99D]">
+          <img className="w-[100%] lg:absolute h-[90%] object-cover object-center top-[8vh]"
+            src="/images/AboutImg2.png"
             alt=""
           />
         </div>
       </div>
 <OurTeam />
 <Volunteers />
+<HorizontalScroll />
     </div>
   );
 };

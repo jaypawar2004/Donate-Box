@@ -27,7 +27,7 @@ const Login = () => {
 
   return (
     <>
-    <NavBar />
+    {/* <NavBar /> */}
     <div className="min-h-screen bg-gray-100 flex">
       {/* Left Side */}
       <div
@@ -53,7 +53,7 @@ const Login = () => {
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-4">
-               <img src="/src/assets/images/logo.png" alt="" />
+               <img src="/images/logo.png" alt="" />
               </div>
               <h2 className="text-2xl font-bold text-gray-800">
                 {isLogin ? 'Welcome Back!' : 'Create Account'}

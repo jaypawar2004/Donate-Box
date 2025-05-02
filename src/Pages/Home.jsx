@@ -5,19 +5,19 @@ const Home = () => {
   const slides = [
     {
       id: 1,
-      image: "/public/images/slider.jfif",
+      image: "/images/slider.jfif",
       title: "Help The Poor To Build A Better World",
       subtitle: "Your donation can help educate thousands of people and make the world more beautiful.",
     },
     {
       id: 2,
-      image: "/public/images/slider.jfif",
+      image: "/images/slider.jfif",
       title: "Support Education for All",
       subtitle: "Together, we can change lives with your generous support.",
     },
     {
       id: 3,
-      image: "/public/images/slider.jfif",
+      image: "/images/slider.jfif",
       title: "Create a Brighter Future",
       subtitle: "Every donation brings hope to those in need.",
     },
@@ -64,7 +64,7 @@ const Home = () => {
           <p className="mb-10 text-xl">{slides[currentSlide].subtitle}</p>
           <button
             onClick={nextSlide} // Trigger next slide on button click
-            className="bg-red-500 border-2 border-white text-white px-10 py-4.5 rounded-lg hover:bg-red-600 transition text-xl"
+            className="bg-[#E53935] border-2 border-white text-white px-10 py-4.5 rounded-xl hover:bg-red-600 transition text-xl"
           >
             Donate Now
           </button>

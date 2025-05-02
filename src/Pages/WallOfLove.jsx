@@ -66,8 +66,9 @@ const WallOfLove = () => {
     const interval = setInterval(() => {
       if (scrollRef.current) {
         scrollRef.current.scrollBy({
-          left: 425, // adjust card width scroll
+          left: 420, // adjust card width scroll
           behavior: "smooth",
+          scrollX: "infinite"
         });
       }
     }, 3000); // every 3 second auto move
@@ -76,7 +77,7 @@ const WallOfLove = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-[#FBE6E4] flex flex-col items-center justify-start py-10">
+    <div className="lg:w-full lg:min-h-screen bg-[#FBE6E4] flex flex-col items-center justify-start py-10">
       {/* Heading */}
       <h1 className="text-4xl font-bold text-gray-800 mb-2">
         Wall of <span className="text-red-500">Love</span>!
@@ -86,12 +87,12 @@ const WallOfLove = () => {
       {/* Slider */}
       <div
         ref={scrollRef}
-        className="flex space-x-6 overflow-x-auto p-6 no-scrollbar w-full max-w-7xl"
+        className="flex lg:space-x-6 overflow-x-auto lg:p-6 no-scrollbar w-full lg:w-full lg:max-w-7xl"
       >
         {people.map((person, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-[400px] h-[450px] bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transition hover:scale-105 duration-300"
+            className="lg:flex-shrink-0 lg:w-[400px] lg:h-[450px] flex-shrink-0 w-[350px] h-[450px] bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transition hover:scale-105 duration-300"
           >
             <h3 className="text-lg font-semibold mb-2">
               Successfully raised{" "}
