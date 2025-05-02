@@ -44,9 +44,9 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 } ) => {
             Leukaemia.
           </h1>
         </section>
-        <div className="w-full h-screen flex p-10">
+        <div className="w-full h-screen flex p-4">
           {/* Left Section */}
-          <div className="example lg:w-[60%] w-full scroll flex flex-col overflow-y-auto">
+          <div className="example lg:w-[60%] w-full flex flex-col overflow-y-auto overflow-x-hidden">
             {/* Swiper Section */}
             <div className="lg:w-full lg:min-h-[75vh] w-full rounded-2xl">
               <Swiper

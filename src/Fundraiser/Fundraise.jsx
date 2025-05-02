@@ -26,7 +26,7 @@ const Fundraise = () => {
             <h1 className="text-6xl font-bold">Donate</h1>
             </div>
         </div>
-        <div className='p-10'>
+        <div className='lg:p-10 p-3'>
 
         <Cards />
         </div>
