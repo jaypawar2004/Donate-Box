@@ -13,7 +13,7 @@ const BlogDetails = () => {
         <div className="w-full lg:h-screen h-[40vh]">
           <img
             className="w-[100%] h-[100%] object-center object-cover"
-            src="/public/square/5.jpg"
+            src="/square/5.jpg"
             alt=""
           />
         </div>
