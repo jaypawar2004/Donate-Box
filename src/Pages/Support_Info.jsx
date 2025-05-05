@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Support_Info = () => {
   return (
     <div className="w-full lg:px-12 px-6 py-12 md:py-20 flex flex-col lg:flex-row items-center lg:items-start gap-10">
@@ -12,18 +12,21 @@ const Support_Info = () => {
         <p className="text-[#666666] text-base sm:text-lg md:text-xl mt-5 max-w-xl">
           GHEM or ‘Giving Hope Every Month’ is a monthly donation program that ensures patients in India receive timely access to life-saving treatment. GHEM or ‘Giving Hope Every Month’ is a monthly donation program that ensures patients in India receive timely access to life-saving treatment.
         </p>
-        <button className="mt-8 py-3 px-6 border-2 rounded-lg bg-[#F11914] text-white flex items-center text-sm sm:text-base hover:bg-[#e21713] transition">
+
+        <Link to={"/donate"}>
+        <button className="mt-8 py-3 px-6 border-2 cursor-pointer rounded-lg bg-[#F11914] text-white flex items-center text-sm sm:text-base hover:bg-[#e21713] transition">
           <svg
             className="mr-2"
             width={24}
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="rgba(247,247,247,1)"
-          >
+            >
             <path d="M2 8.5C2 5.46243 4.46243 3 7.5 3C9.36016 3 11.0046 3.92345 12 5.33692C12.9954 3.92345 14.6398 3 16.5 3C19.5376 3 22 5.46243 22 8.5C22 16 11.9999 21.4852 11.9999 21.4852C11.9999 21.4852 2 16 2 8.5Z"></path>
           </svg>
           Support Every Month
         </button>
+            </Link>
       </div>
       <div className="w-30"></div>
 
@@ -36,7 +39,7 @@ const Support_Info = () => {
           >
             <img
               className="w-12 sm:w-14 object-contain"
-              src={`public/images/${img}`}
+              src={`/images/${img}`}
               alt={`icon-${i}`}
             />
             <span className="absolute -bottom-6 text-sm text-gray-600">Statement</span>
