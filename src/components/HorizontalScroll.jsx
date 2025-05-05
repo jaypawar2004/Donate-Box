@@ -54,7 +54,7 @@ const HorizontalScroll = () => {
   <div className="w-full lg:w-[50%] h-[300px] lg:h-[60vh] lg:relative lg:left-[10vw] flex items-center justify-center">
     <img
       className="w-[90%] h-[90%] lg:w-[80%] lg:h-[80%] object-cover rounded-2xl shadow-xl"
-      src="https://images.unsplash.com/photo-1743485237407-e00bfb75163e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      src="/public/square/2.jpg"
       alt="support"
     />
   </div>

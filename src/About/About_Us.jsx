@@ -65,7 +65,7 @@ const About_Us = () => {
         </div>
         {/* <div className="w-[50%] h-[40 30 50 50] bg-green-800 "></div> */}
         <div
-          className="lg:w-full lg:h-full w-[100%] h-[80%] bg-blue-600"
+          className="lg:w-full lg:h-full w-[100%] h-[80%]"
           style={{
             clipPath: "polygon(0 0%, 100% 0%, 100% 80%, 58% 94%, 0 80%)",
           }}
@@ -73,7 +73,7 @@ const About_Us = () => {
           {/* content yahan likhna hai */}
           <div className="text-white text-3xl font-bold">
             <img
-              src="https://images.unsplash.com/photo-1744566917617-452209a98498?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/square/5.jpg"
               alt=""
             />
           </div>
@@ -101,13 +101,13 @@ const About_Us = () => {
         <div className="lg:w-[50%] relative h-[100%] bg-[#9DAEC8]">
           <img
           className="w-full h-[90%] object-cover object-center"
-            src="/images/AboutImg.png"
+            src="/square/3.jpg"
             alt=""
           />
         </div>
         <div className="lg:w-[50%] lg:absolute  right-0 bottom-0 h-[100%] bg-[#DCA99D]">
           <img className="w-[100%] lg:absolute h-[90%] object-cover object-center top-[8vh]"
-            src="/images/AboutImg2.png"
+            src="/square/4.jpg"
             alt=""
           />
         </div>

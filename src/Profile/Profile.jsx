@@ -21,7 +21,7 @@ const Profile = () => {
             <div className="w-full h-[105px]">
               <img
                 className="w-full h-full rounded-t-md object-cover"
-                src="https://plus.unsplash.com/premium_photo-1664304423623-4f9d5ed90b4f?q=80&w=2068&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="/HeaderImages/5.jpg"
                 alt=""
               />
             </div>

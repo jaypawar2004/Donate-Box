@@ -18,7 +18,7 @@ const Contact_Us = () => {
       <div
         className="w-full h-full bg-cover bg-center"
         style={{
-          backgroundImage: `url("/images/slider.jfif")`,
+          backgroundImage: `url("/HeaderImages/contact.jpg")`,
         }}
       ></div>
       <div className="absolute w-full h-full bg-black top-0 opacity-30"></div>

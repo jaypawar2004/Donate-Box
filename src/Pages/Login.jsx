@@ -32,7 +32,7 @@ const Login = () => {
         className="hidden lg:block lg:w-1/2 bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://plus.unsplash.com/premium_vector-1744360824147-a63180078c1c?q=80&w=2128&auto=format&fit=crop')",
+            "url('/square/1.jpg')",
         }}
       ></div>
 

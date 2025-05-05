@@ -84,13 +84,13 @@ const About = () => {
           {/* Left: Images */}
           <div className="w-full lg:w-[40%] h-full flex flex-col">
             <img
-              className="w-full h-56 sm:h-64 lg:h-1/2 object-cover"
-              src="https://plus.unsplash.com/premium_photo-1666264200754-1a2d5f2f6695?w=600&auto=format&fit=crop&q=60"
+              className="w-full max-h-56 sm:h-64 lg:h-1/2 object-cover"
+              src="/square/1.jpg"
               alt=""
             />
             <img
-              className="w-full h-56 sm:h-64 lg:h-1/2 object-cover"
-              src="https://images.unsplash.com/photo-1743999941326-ef5cc0120e8e?w=600&auto=format&fit=crop&q=60"
+              className="w-full max-h-56 sm:h-64 lg:h-1/2 object-cover"
+              src="/square/4.jpg"
               alt=""
             />
           </div>
