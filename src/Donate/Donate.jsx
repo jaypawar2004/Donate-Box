@@ -2,8 +2,9 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import Cards from '../components/Cards'
 import Footer from '../components/Footer'
+import DonateFillter from '../components/DonateFillter'
 
-const Fundraise = () => {
+const Donate = () => {
   return (
     <>
     <NavBar />
@@ -12,7 +13,7 @@ const Fundraise = () => {
             <div
             className={`w-full h-full bg-cover bg-center`}
             style={{
-                backgroundImage: `url("/public/images/slider.jfif")`,
+                backgroundImage: `url("/images/slider.jfif")`,
                 width: "100%",
                 height: "100%",
                 objectPosition: "center",
@@ -26,6 +27,11 @@ const Fundraise = () => {
             <h1 className="text-6xl font-bold">Donate</h1>
             </div>
         </div>
+        <div className=''>
+        <DonateFillter />
+
+
+        </div>
         <div className='lg:p-10 p-3'>
 
         <Cards />
@@ -36,4 +42,4 @@ const Fundraise = () => {
   )
 }
 
-export default Fundraise
+export default Donate

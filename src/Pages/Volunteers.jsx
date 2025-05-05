@@ -82,9 +82,10 @@ const Volunteers = () => {
       <h1 className="text-center text-3xl sm:text-4xl font-bold">
         Meet <span className="text-red-500">Our Volunteers</span>
       </h1>
-      <div className="h-1 w-24 bg-red-600 mx-auto my-4 rounded-full" />
+      <div className="h-1 w-24 bg-red-600 mx-auto my-4 rounded-full " />
 
-      <div className="mt-8 grid grid-cols-2 sm:grid-cols-6 gap-10 place-items-center">
+      {/* <div className="mt-8 m-auto grid grid-cols-2 sm:grid-cols-6 gap-10 place-items-center bg-red-600"> */}
+      <div className="flex items-center justify-center gap-10 ">
         {visibleVolunteers.map((vol, index) => (
           <div key={index} className="flex flex-col items-center text-center">
             <img
@@ -100,7 +101,7 @@ const Volunteers = () => {
 
       {/* Show More Button */}
       {volunteers.length > 2 && !showAll && (
-        <div className="flex justify-center mt-10">
+        <div className="flex hidden justify-center mt-10">
           <button
             onClick={() => setShowAll(true)}
             className="bg-[#E53935] border-2 border-white text-white px-6 py-2 rounded-full hover:bg-red-600 transition-all"

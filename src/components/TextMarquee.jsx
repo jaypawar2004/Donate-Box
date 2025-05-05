@@ -2,9 +2,12 @@ import React from "react";
 
 // 👉 Array of objects containing image and text
 const items = [
-  { img: "/public/images/Heart Img.png", text: "Arvind just donated Rs 5000!" },
-  { img: "/public/images/Heart Img.png", text: "Ankit just donated Rs 2000!" },
-  { img: "/public/images/Heart Img.png", text: "Rishav just donated Rs 300!" },
+  { img: "/images/Heart Img.png", text: "Arvind just donated Rs 5000!" },
+  { img: "/images/Heart Img.png", text: "Jay Pawar just donated Rs 5000!" },
+  { img: "/images/Heart Img.png", text: "Ankit just donated Rs 2000!" },
+  { img: "/images/Heart Img.png", text: "Jay Pawar just donated Rs 2000!" },
+  { img: "/images/Heart Img.png", text: "Rishav just donated Rs 300!" },
+  { img: "/images/Heart Img.png", text: "Jay Pawar just donated Rs 300!" },
 ];
 
 const TextMarquee = () => {

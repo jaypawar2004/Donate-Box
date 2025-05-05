@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Cards = () => {
+const Cards = (id) => {
   // Dummy data for cards (match image design)
   const cardData = [
     {
@@ -58,8 +58,6 @@ const Cards = () => {
   return (
     <div className="container mx-auto py-5">
     
-   
-    
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         {cardData.slice(0, visibleCards).map((card) => (
           <div
@@ -84,7 +82,7 @@ const Cards = () => {
               <p className="text-sm text-gray-600 mt-1">
                 {card.achieved} <span className="text-gray-500">Achieved</span> / {card.goal}
               </p>
-              <Link to={"/fd"}>
+              <Link to={`/donate/${id}`}>
               <button className="bg-red-500 cursor-pointer text-white px-4 py-2 rounded-lg mt-2 hover:bg-red-600 transition w-full">
                 DONATE NOW
               </button>
@@ -103,6 +101,7 @@ const Cards = () => {
           >
             View All
           </button>
+          
         </div>
       )}
     </div>

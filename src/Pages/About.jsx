@@ -73,7 +73,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="relative w-full min-h-screen mb-[5vw] overflow-hidden bg-white">
+    <div className="relative w-full min-h-screen mb-[5vw] lg:mb-0 overflow-hidden bg-white">
       <h2 className="text-4xl sm:text-5xl mt-10 text-center font-bold text-black">
         About <span className="text-red-500">Donate Box</span>!
       </h2>
@@ -102,7 +102,7 @@ const About = () => {
                 A team of{" "}
                 <span className="text-red-600">Soft Hearted People</span>!
               </h1>
-              <p className="mt-5 text-xl sm:text-md text-gray-700 lg:leading-12">
+              <p className="mt-5 text-xl sm:text-md text-gray-700 lg:leading-10">
                 We’ve transformed the crowdfunding industry with our unique
                 platform, enabling people worldwide to donate directly toward
                 products needed by NGOs. Built on trust, transparency, and

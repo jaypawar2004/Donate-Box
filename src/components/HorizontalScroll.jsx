@@ -7,6 +7,7 @@ import logo3 from '/public/images/C_logo3.png';
 import logo4 from '/public/images/C_logo4.png';
 import logo5 from '/public/images/C_logo5.png';
 import Footer from "./Footer";
+import { Link, Links } from "react-router";
 
 const logos = [logo1, logo2, logo3, logo4, logo5,
   logo1, logo2, logo3, logo4, logo5
@@ -24,7 +25,7 @@ const logos = [logo1, logo2, logo3, logo4, logo5,
 const HorizontalScroll = () => {
   return (
     <div className="lg:w-full w-full  lg:h-auto bg-[#F3F7F5]">
-      <h1 className="text-center text-3xl py-5">Our Collaborations</h1>
+      <h1 className="text-center text-4xl py-5 text-red-500 font-bold"><span className="text-black">Our</span> Collaborations</h1>
       <div className="w-30 mb-5 bg-red-500 h-1 rounded-full m-auto"></div>
 
       <p className="text-center lg:w-[850px] text-lg m-auto">
@@ -66,18 +67,26 @@ const HorizontalScroll = () => {
       Even the smallest contributions make a big impact.
     </p>
 
-    <div className="flex flex-col w-full items-center">
-      <button className="border-2 border-white rounded-lg w-[70%] sm:w-[50%] lg:w-[32%] px-6 bg-[#E53935] text-white py-2">
+    <div className="flex flex-col w-full  items-center ">
+    <Link to={"/donate"}>
+    
+      <button className="border-2 border-white rounded-lg lg:w-[13vw] px-6 bg-[#E53935] text-white py-2">
         Donate Now
       </button>
+    </Link>
       <br />
-      <button className="border-2 border-white rounded-lg w-[70%] sm:w-[50%] lg:w-[32%] px-6 bg-[#E53931] text-white py-2">
+      <Link to={"/contact"}>
+      <button className="border-2 border-white rounded-lg lg:w-[13vw] px-6 bg-[#E53931] text-white py-2">
         Collaborate with Us
       </button>
+      </Link>
+
       <br />
-      <button className="border-2 border-white rounded-lg w-[70%] sm:w-[50%] lg:w-[32%] px-6 bg-white text-red-500 py-2">
+      <Link>
+      <button className="border-2 border-white rounded-lg lg:w-[13vw] px-6 bg-white text-red-500 py-2">
         Career
       </button>
+      </Link>
     </div>
   </div>
 </div>

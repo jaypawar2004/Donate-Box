@@ -24,7 +24,7 @@ const TermsAndConditions = () => {
             <h1 className="text-6xl font-bold">Terms & Conditions</h1>
           </div>
         </div>
-        <div className="w-full h-auto p-10">
+        <div className="w-full h-auto p-10 px-[15vw]">
           <h3 className="font-bold ">
             Last Updated: <span className="font-thin">12 March 2025</span>
           </h3>

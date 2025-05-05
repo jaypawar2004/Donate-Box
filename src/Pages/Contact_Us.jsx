@@ -58,8 +58,8 @@ const Contact_Us = () => {
               <FaLocationDot className="text-5xl" />
             </div>
             <div>
-              <h4 className="text-zinc-50 text-lg font-semibold mb-1">Address</h4>
-              <p className="text-white text-base leading-tight">
+              <h4 className="text-zinc-50 ml-5 text-lg font-semibold mb-1">Address</h4>
+              <p className="text-white text-base ml-5 leading-tight">
                 Plot No. 12, MP Nagar Zone 2, Near DB Mall, Bhopal, Madhya Pradesh – 462011
               </p>
             </div>

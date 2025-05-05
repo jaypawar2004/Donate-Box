@@ -33,13 +33,13 @@ const Home = () => {
     return () => clearInterval(timer); // Cleanup on unmount
   }, [slides.length]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
+  // const nextSlide = () => {
+  //   setCurrentSlide((prev) => (prev + 1) % slides.length);
+  // };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  // const prevSlide = () => {
+  //   setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  // };
 
   return (
     <div className="relative w-full h-[90vh] overflow-hidden">
@@ -58,13 +58,13 @@ const Home = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10   flex items-center justify-center h-full text-white text-center">
+      <div className="relative z-10  flex items-center justify-center h-full text-white text-center">
         <div>
-          <h1 className="text-7xl font-bold mb-10">{slides[currentSlide].title}</h1>
-          <p className="mb-10 text-xl">{slides[currentSlide].subtitle}</p>
+          <h1 className="lg:text-7xl text-3xl font-bold mb-10">{slides[currentSlide].title}</h1>
+          <p className="mb-10 lg:text-xl text-lg">{slides[currentSlide].subtitle}</p>
           <button
-            onClick={nextSlide} // Trigger next slide on button click
-            className="bg-[#E53935] border-2 border-white text-white px-10 py-4.5 rounded-xl hover:bg-red-600 transition text-xl"
+            // onClick={nextSlide} // Trigger next slide on button click
+            className="bg-[#E53935] border border-white text-white px-5 py-2 rounded hover:bg-red-600 transition text-lg"
           >
             Donate Now
           </button>
@@ -72,20 +72,7 @@ const Home = () => {
       </div>
 
       {/* Navigation Buttons */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-200 opacity-100 text-black p-6 rounded-full hover:bg-opacity-75 transition"
-      >
-         <IoIosArrowBack />
-        {/* <i className="ri-arrow-left-s-line text-white "></i> */}
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-200 opacity-100 text-black p-6 rounded-full hover:bg-opacity-75 transition"
-      >
-        <IoIosArrowForward />
-          {/* <i className="ri-arrow-right-s-line text-white "></i> */}
-      </button>
+    
 
       {/* Dots Navigation */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">

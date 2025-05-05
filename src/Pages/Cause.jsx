@@ -1,36 +1,33 @@
-import React, { useRef , useState } from "react";
+// import React, { useRef , useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import CardsContainer from "../Pages/CardsContainer";
 import Cards from "../components/Cards";
+import DonateFillter from "../components/DonateFillter";
 
-const causes = [
-  { label: "ALL", icon: "🩺" },
-  { label: "ANIMALS", icon: "🐾" },
-  { label: "EDUCATION", icon: "🎓" },
-  { label: "CHILDREN", icon: "😃" },
-  { label: "HUNGER", icon: "🍲" },
-  { label: "HANDICAP", icon: "♿" },
-];
+// const causes = [
+//   { label: "ALL", icon: "🩺" },
+//   { label: "ANIMALS", icon: "🐾" },
+//   { label: "EDUCATION", icon: "🎓" },
+//   { label: "CHILDREN", icon: "😃" },
+//   { label: "HUNGER", icon: "🍲" },
+//   { label: "HANDICAP", icon: "♿" },
+// ];
 
 const Cause = () => {
-  const containerRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(null);
+  // const containerRef = useRef(null);
+  // const [activeIndex, setActiveIndex] = useState(null);
 
  
 
   return (
-    <div className="w-full lg:p-[8vw] px-5 bg-[#FDF5F4] min-h-[200%]">
-        <div className="w-full px-5 py-10 bg-[#fef7f4] text-center">
-      <h2 className="text-3xl font-bold text-black">
+    <div className="w-full lg:p-[8vw] px-5 bg-[#FDF5F4]">
+        <div className="w-full px-5 bg-[#fef7f4] text-center">
+      {/* <h2 className="text-3xl font-bold text-black">
         Donate for a <span className="text-red-500">Cause</span>!
       </h2>
-      <div className="w-20 h-1 bg-red-500 mx-auto my-2 rounded"></div>
-
-      <div className="relative mt-8 w-full">
-      {/* Left Button */}
+      <div className="w-20 h-1 bg-red-500 mx-auto my-2 rounded"></div> */}
+      {/* <div className="relative mt-8 w-full">
      
-
-      {/* Scrollable Cards */}
       <div
         ref={containerRef}
         className="flex overflow-x-auto no-scrollbar scroll-smooth gap-4 px-4 md:px-[5vw] pb-2"
@@ -54,9 +51,9 @@ const Cause = () => {
         ))}
       </div>
 
-      {/* Right Button */}
+
      
-    </div>
+    </div> */}
     </div>
    <div className="flex grid-cols-4 gap-5">
   <Cards />

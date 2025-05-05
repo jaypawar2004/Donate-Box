@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import TextMarquee from "../components/TextMarquee";
 import { SiPhonepe } from "react-icons/si";
 import { LuHeartHandshake, LuMessageCircleHeart } from "react-icons/lu";
 import { FaGooglePay } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
-import "./FundraiseDetails.css";
+import "./DonateDetails.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { MdOutlineSecurity } from "react-icons/md";
 import Cards from "../components/Cards";
+import { Link, useParams } from "react-router";
 
 
-const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 } ) => {
+const DonateDetails = ({ strokeWidth = 8, percentage = 40 } ) => {
+
+  const [activeSection, setActiveSection] = useState("Story");
+
+
+  const params =  useParams()
+  console.log(params) 
   const radius = 50 - strokeWidth / 2;
   const pathDescription = `
     M 50,50 m 0,-${radius}
@@ -33,6 +40,7 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 } ) => {
     { id: 3, image: "/images/Slider2.jpg" },
   ];
   return (
+    
     <>
       <div className="bg-white pt-10">
         <div className="w-full h-full pt-10"></div>
@@ -160,130 +168,131 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 } ) => {
               
             </div>
 
-            {/* Buttons Section */}
-            <div className="w-full h-[200px] flex items-center text-center justify-between mt-15 mb-15 lg:w-full lg:h-[200px] lg:flex lg:items-center lg:text-center lg:justify-between lg:mt-15 lg:mb-15 ">
-              {["Story", "Document", "Updates"].map((btn, index) => (
-                <button
-                  key={index}
-                  className={`lg:px-10  lg:py-3 px-5 py-3 lg:w-[13vw] text-center rounded-lg shadow-xl ${
-                    btn === "Story"
-                      ? "bg-red-500"
-                      : "border border-red-400 bg-[#F0F0F0]"
-                  }`}
-                >
-                  {btn}
-                </button>
-              ))}
-            </div>
+           {/* Buttons Section */}
+  <div className="w-full h-[200px] flex items-center text-center justify-between mt-15 mb-15 lg:w-full lg:h-[200px] lg:flex lg:items-center lg:text-center lg:justify-between lg:mt-15 lg:mb-15 ">
+    {["Story", "Document", "Updates"].map((btn, index) => (
+      <button
+        key={index}
+        onClick={() => setActiveSection(btn)}
+        className={`lg:px-10 lg:py-3 px-5 py-3 lg:w-[13vw] text-center rounded-lg shadow-xl ${
+          activeSection === btn
+            ? "bg-red-500 text-white"
+            : "border border-red-400 bg-[#F0F0F0]"
+        }`}
+      >
+        {btn}
+      </button>
+    ))}
+  </div>
 
-            {/* Story Section */}
-            <article className="w-full h-auto  p-5">
-              <p className="text-lg">
-                Give Bentley a Chance to Live
-                <br />
-                <br />
-                Bentley Owen Raphael is a brave 9-year-old boy fighting the
-                toughest battle of his life. Diagnosed with relapsed Acute
-                Lymphoblastic Leukaemia, he underwent a stem cell transplant
-                with his mother as the donor. Despite the initial success,
-                Bentley’s condition took a devastating turn. He is now in the
-                ICU, struggling with kidney failure, uncontrollable seizures,
-                and severe hypertension.
-                <br />
-                <br />
-                His parents are doing everything they can, but the hospital bill
-                has climbed to RM650,000—an amount they can’t afford. Watching
-                their son fight for his life while facing this financial burden
-                is heartbreaking.
-                <br />
-                <br />
-                Bentley deserves a chance to grow up, laugh, and live a full
-                life. Your kindness can give him that chance. Please donate and
-                help this family through their darkest hour. Every contribution
-                counts.
-              </p>
-              <br />
-              <p className="text-lg">
-                The Impact of Your Support
-                <br />
-                <br />
-                Your generous contributions will directly help with:
-                <br />
-                ✅ Critical Surgeries & Emergency Care
-                <br />
-                ✅ Hospital Expenses & Essential Medications
-                <br />
-                ✅ Physiotherapy & Long-Term Recovery
-                <br />
-                <br />
-                Every donation brings hope and healing—support today! 💙✨
-              </p>
-            </article>
+  {/* Conditionally Render Sections */}
+  {activeSection === "Story" && (
+    <article className="w-full h-auto  p-5">
+      <p className="text-lg">
+        {/* Your Story Content */}
+        Give Bentley a Chance to Live
+        <br />
+        <br />
+        Bentley Owen Raphael is a brave 9-year-old boy fighting the
+      toughest battle of his life. Diagnosed with relapsed Acute
+      Lymphoblastic Leukaemia, he underwent a stem cell transplant
+      with his mother as the donor. Despite the initial success,
+      Bentley’s condition took a devastating turn. He is now in the
+      ICU, struggling with kidney failure, uncontrollable seizures,
+      and severe hypertension.
+        {/* ... rest of your story content ... */}
+        <br />
+      <br />
+      His parents are doing everything they can, but the hospital bill
+      has climbed to RM650,000—an amount they can’t afford. Watching
+      their son fight for his life while facing this financial burden
+      is heartbreaking.
+      <br />
+      <br />
+      Bentley deserves a chance to grow up, laugh, and live a full
+      life. Your kindness can give him that chance. Please donate and
+      help this family through their darkest hour. Every contribution
+      counts.
+      </p>
+      <br />
+    <p className="text-lg">
+      The Impact of Your Support
+      <br />
+      <br />
+      Your generous contributions will directly help with:
+      <br />
+      ✅ Critical Surgeries & Emergency Care
+      <br />
+      ✅ Hospital Expenses & Essential Medications
+      <br />
+      ✅ Physiotherapy & Long-Term Recovery
+      <br />
+      <br />
+      Every donation brings hope and healing—support today! 💙✨
+    </p>
+    </article>
+  )}
 
-            {/* Document */}
+  {activeSection === "Document" && (
+    <div className="w-full h-auto p-10 shadow-lg">
+      <h1 className="text-2xl text-black">Document</h1>
+      <hr className="w-full mb-5" />
+      <img
+        src="https://plus.unsplash.com/premium_vector-1714148691911-5e79c7aa7454?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Document"
+      />
+    </div>
+  )}
 
-            <div className="w-full h-auto p-10 shadow-lg">
-              <h1 className="text-2xl text-black">Document</h1>
-              <hr className="w-full mb-5" />
-
-              <img
-                src="https://plus.unsplash.com/premium_vector-1714148691911-5e79c7aa7454?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              />
-            </div>
-
-            {/* Updates */}
-
-            <div className="w-full mt-5 space-y-6">
-              <h1 className="text-3xl">Updates</h1>
-              <p className=" text-lg">
-                Feel free to reach out to the campaigner for the latest update
-                on this fundraiser.
-              </p>
-              <h3 className="text-2xl text-red-500">
-                <span>#1 | </span> 27/02/2025
-              </h3>
-            </div>
-
-            {/* Updates Images */}
-
-            <div className="lg:w-full lg:flex lg:items-center lg:justify-between lg:h-[40vh] w-full h-[100vh]">
-              <div className="lg:w-[45%] lg:h-full w-full mb-2">
-                <img
-                  className="w-[100%] h-[100%] object-cover object-center rounded-xl shadow-lg "
-                  src="https://images.unsplash.com/photo-1588410670460-cdab54625253?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt=""
-                />
-              </div>
-              <div className="lg:w-[45%] lg:h-full w-full mb-2">
-                <img
-                  className="w-[100%] h-[100%] object-cover object-center rounded-xl shadow-lg"
-                  src="https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmFieXxlbnwwfHwwfHx8MA%3D%3D"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            {/* Update Details */}
-
-            <p className="text-xl py-5">
-              Dear Donors,
-              <br />
-              <br />
-              We at Annapurna Seva & Prerna Foundation extend our heartfelt
-              gratitude for your generous contributions. Your support is
-              bringing nourishment, care, and hope to those in need. Your
-              invaluable support ensures that families in need receive
-              nutritious meals and essentials to sustain their well-being.
-              <br />
-              <br />
-              We are truly grateful for your generosity—it continues to bring
-              positive change to so many lives. Thank you for standing with us
-              in this mission
-              <br /> <br />
-              Warm Regards,Annapurna Seva & Prerna Foundation
-            </p>
-
+  {activeSection === "Updates" && (
+    <>
+      <div className="w-full mt-5 space-y-6">
+        <h1 className="text-3xl">Updates</h1>
+        <p className="text-lg">
+        Feel free to reach out to the campaigner for the latest update
+        on this fundraiser.
+        </p>
+        <h3 className="text-2xl text-red-500">
+          <span>#1 | </span> 27/02/2025
+        </h3>
+      </div>
+      {/* Update Images */}
+      <div className="lg:w-full lg:flex lg:items-center lg:justify-between lg:h-[40vh] w-full h-[100vh]">
+        <div className="lg:w-[45%] lg:h-full w-full mb-2">
+          <img
+            className="w-[100%] h-[100%] object-cover object-center rounded-xl shadow-lg"
+            src="https://images.unsplash.com/photo-1588410670460-cdab54625253?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+        </div>
+        <div className="lg:w-[45%] lg:h-full w-full mb-2">
+          <img
+            className="w-[100%] h-[100%] object-cover object-center rounded-xl shadow-lg"
+            src="https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmFieXxlbnwwfHwwfHx8MA%3D%3D"
+            alt=""
+          />
+        </div>
+      </div>
+      {/* Update Details */}
+      <p className="text-xl py-5">
+    Dear Donors,
+    <br />
+    <br />
+    We at Annapurna Seva & Prerna Foundation extend our heartfelt
+    gratitude for your generous contributions. Your support is
+    bringing nourishment, care, and hope to those in need. Your
+    invaluable support ensures that families in need receive
+    nutritious meals and essentials to sustain their well-being.
+    <br />
+    <br />
+    We are truly grateful for your generosity—it continues to bring
+    positive change to so many lives. Thank you for standing with us
+    in this mission
+    <br /> <br />
+    Warm Regards,Annapurna Seva & Prerna Foundation
+  </p>
+    </>
+  )}
             {/* Contributors Section */}
             <div className="w-full bg-[#FFFAFA] p-10 mt-10">
               <h1 className="text-2xl font-bold">Contributors</h1>
@@ -310,15 +319,17 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 } ) => {
               ))}
             </div>
             <div className="flex items-center justify-center bg-[#FFFAFA]">
-              <button className="lg:border-3 lg:py-4 lg:w-[40%] m-auto border-2 p-3  rounded-xl border-red-300 text-2xl text-red-300">
-                View All Supporters
-              </button>
+            <Link to={""}>
+            <button className=" text-red-500 border-2 hover:text-white px-4 py-2 rounded hover:bg-red-700 transition">
+              View All Supporters 
+            </button>
+          </Link>
             </div>
           </div>
 
           {/* Right Section */}
-          <div className="lg:w-[40%] lg:block hidden lg:visible invisible bg-white  p-5 px-10 ">
-            <div className="w-full flex items-center justify-between text-lg">
+          <div className="lg:w-[40%] lg:block hidden lg:visible invisible bg-rose-50 p-5 px-10 ">
+            <div className="w-full flex items-center  justify-between text-lg">
               <h1
                 className="font-bold
             "
@@ -327,7 +338,7 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 } ) => {
               </h1>
               <h3 className="underline">1000 Donars</h3>
             </div>
-            <div className="w-full  -ml-5">
+            <div className="w-  -ml-5">
               <div className="w-full h-[220px] flex flex-col justify-center items-center ">
                 <div className="grid grid-cols-3  items-center justify-start">
                   <div className="flex justify-center items-center p-4">
@@ -465,6 +476,7 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 } ) => {
               </div>
             </div>
           </div>
+          {/* Right Section end */}
         </div>
         <div className="w-full h-[50vh] bg-[#FBFAF8] p-10">
           <h1 className="text-2xl">
@@ -508,7 +520,7 @@ const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 } ) => {
   );
 };
 
-export default FundraiseDetails;
+export default DonateDetails;
 
 
 // import React from "react";
@@ -518,13 +530,13 @@ export default FundraiseDetails;
 // import { FaGooglePay } from "react-icons/fa";
 // import "swiper/css";
 // import "swiper/css/navigation";
-// import "./FundraiseDetails.css";
+// import "./DonateDetails.css";
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import { Autoplay, Navigation } from "swiper/modules";
 // import { MdOutlineSecurity } from "react-icons/md";
 // import Cards from "../components/Cards";
 
-// const FundraiseDetails = ({ strokeWidth = 8, percentage = 40 }) => {
+// const DonateDetails = ({ strokeWidth = 8, percentage = 40 }) => {
 //   const radius = 50 - strokeWidth / 2;
 //   const pathDescription = `
 //     M 50,50 m 0,-${radius}
@@ -998,4 +1010,163 @@ export default FundraiseDetails;
 //   );
 // };
 
-// export default FundraiseDetails;
+// export default DonateDetails;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* All Button section*/}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {/* Buttons Section */}
+  // <div className="w-full h-[200px] flex items-center text-center justify-between mt-15 mb-15 lg:w-full lg:h-[200px] lg:flex lg:items-center lg:text-center lg:justify-between lg:mt-15 lg:mb-15 ">
+  //   {["Story", "Document", "Updates"].map((btn, index) => (
+  //     <button
+  //       key={index}
+  //       className={`lg:px-10  lg:py-3 px-5 py-3 lg:w-[13vw] text-center rounded-lg shadow-xl ${
+  //         btn === "Story"
+  //           ? "bg-red-500"
+  //           : "border border-red-400 bg-[#F0F0F0]"
+  //       }`}
+  //     >
+  //       {btn}
+  //     </button>
+  //   ))}
+  // </div>
+
+  // {/* Story Section */}
+  // <article className="w-full h-auto  p-5">
+  //   <p className="text-lg">
+  //     Give Bentley a Chance to Live
+  //     <br />
+  //     <br />
+  //     Bentley Owen Raphael is a brave 9-year-old boy fighting the
+  //     toughest battle of his life. Diagnosed with relapsed Acute
+  //     Lymphoblastic Leukaemia, he underwent a stem cell transplant
+  //     with his mother as the donor. Despite the initial success,
+  //     Bentley’s condition took a devastating turn. He is now in the
+  //     ICU, struggling with kidney failure, uncontrollable seizures,
+  //     and severe hypertension.
+  //     <br />
+  //     <br />
+  //     His parents are doing everything they can, but the hospital bill
+  //     has climbed to RM650,000—an amount they can’t afford. Watching
+  //     their son fight for his life while facing this financial burden
+  //     is heartbreaking.
+  //     <br />
+  //     <br />
+  //     Bentley deserves a chance to grow up, laugh, and live a full
+  //     life. Your kindness can give him that chance. Please donate and
+  //     help this family through their darkest hour. Every contribution
+  //     counts.
+  //   </p>
+  //   <br />
+  //   <p className="text-lg">
+  //     The Impact of Your Support
+  //     <br />
+  //     <br />
+  //     Your generous contributions will directly help with:
+  //     <br />
+  //     ✅ Critical Surgeries & Emergency Care
+  //     <br />
+  //     ✅ Hospital Expenses & Essential Medications
+  //     <br />
+  //     ✅ Physiotherapy & Long-Term Recovery
+  //     <br />
+  //     <br />
+  //     Every donation brings hope and healing—support today! 💙✨
+  //   </p>
+  // </article>
+
+  // {/* Document */}
+
+  // <div className="w-full h-auto p-10 shadow-lg">
+  //   <h1 className="text-2xl text-black">Document</h1>
+  //   <hr className="w-full mb-5" />
+
+  //   <img
+  //     src="https://plus.unsplash.com/premium_vector-1714148691911-5e79c7aa7454?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  //     alt=""
+  //   />
+  // </div>
+
+  // {/* Updates */}
+
+  // <div className="w-full mt-5 space-y-6">
+  //   <h1 className="text-3xl">Updates</h1>
+  //   <p className=" text-lg">
+  //     Feel free to reach out to the campaigner for the latest update
+  //     on this fundraiser.
+  //   </p>
+  //   <h3 className="text-2xl text-red-500">
+  //     <span>#1 | </span> 27/02/2025
+  //   </h3>
+  // </div>
+
+  // {/* Updates Images */}
+
+  // <div className="lg:w-full lg:flex lg:items-center lg:justify-between lg:h-[40vh] w-full h-[100vh]">
+  //   <div className="lg:w-[45%] lg:h-full w-full mb-2">
+  //     <img
+  //       className="w-[100%] h-[100%] object-cover object-center rounded-xl shadow-lg "
+  //       src="https://images.unsplash.com/photo-1588410670460-cdab54625253?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  //       alt=""
+  //     />
+  //   </div>
+  //   <div className="lg:w-[45%] lg:h-full w-full mb-2">
+  //     <img
+  //       className="w-[100%] h-[100%] object-cover object-center rounded-xl shadow-lg"
+  //       src="https://images.unsplash.com/photo-1566004100631-35d015d6a491?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmFieXxlbnwwfHwwfHx8MA%3D%3D"
+  //       alt=""
+  //     />
+  //   </div>
+  // </div>
+
+  // {/* Update Details */}
+
+  // <p className="text-xl py-5">
+  //   Dear Donors,
+  //   <br />
+  //   <br />
+  //   We at Annapurna Seva & Prerna Foundation extend our heartfelt
+  //   gratitude for your generous contributions. Your support is
+  //   bringing nourishment, care, and hope to those in need. Your
+  //   invaluable support ensures that families in need receive
+  //   nutritious meals and essentials to sustain their well-being.
+  //   <br />
+  //   <br />
+  //   We are truly grateful for your generosity—it continues to bring
+  //   positive change to so many lives. Thank you for standing with us
+  //   in this mission
+  //   <br /> <br />
+  //   Warm Regards,Annapurna Seva & Prerna Foundation
+  // </p> -->
