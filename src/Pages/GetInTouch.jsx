@@ -123,7 +123,7 @@ const GetInTouch = () => {
             </div>
             <button
               type="submit"
-              className="bg-[#E53935] text-white font-semibold py-3 rounded-lg hover:bg-red-600 transition-all"
+              className="bg-[#E53935] cursor-pointer text-white font-semibold py-3 rounded-lg hover:bg-red-600 transition-all"
             >
               Send Message
             </button>

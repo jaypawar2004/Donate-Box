@@ -54,7 +54,7 @@ const HorizontalScroll = () => {
   <div className="w-full lg:w-[50%] h-[300px] lg:h-[60vh] lg:relative lg:left-[10vw] flex items-center justify-center">
     <img
       className="w-[90%] h-[90%] lg:w-[80%] lg:h-[80%] object-cover rounded-2xl shadow-xl"
-      src="/public/square/2.jpg"
+      src="/square/2.jpg"
       alt="support"
     />
   </div>

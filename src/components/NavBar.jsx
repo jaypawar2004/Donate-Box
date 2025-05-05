@@ -42,7 +42,7 @@ const NavBar = () => {
             <span className={navItemClass("/contact")}>Contact Us</span>
           </Link>
           <Link to={"/login"}>
-            <button className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">
+            <button className="bg-red-600 cursor-pointer text-white px-4 py-2 rounded hover:bg-red-700 transition">
               Login / Signup
             </button>
           </Link>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
+import { Link } from "react-router-dom";
 const Home = () => {
   const slides = [
     {
@@ -62,12 +63,14 @@ const Home = () => {
         <div>
           <h1 className="lg:text-7xl text-3xl font-bold mb-10">{slides[currentSlide].title}</h1>
           <p className="mb-10 lg:text-xl text-lg">{slides[currentSlide].subtitle}</p>
+          <Link to={"/donate"}>
           <button
             // onClick={nextSlide} // Trigger next slide on button click
-            className="bg-[#E53935] border border-white text-white px-5 py-2 rounded hover:bg-red-600 transition text-lg"
-          >
+            className="bg-[#E53935] border cursor-pointer border-white text-white px-5 py-2 rounded hover:bg-red-600 transition text-lg"
+            >
             Donate Now
           </button>
+            </Link>
         </div>
       </div>
 
