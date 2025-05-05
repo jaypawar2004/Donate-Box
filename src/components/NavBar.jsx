@@ -15,73 +15,70 @@ const NavBar = () => {
 
   return (
     <nav className="bg-white fixed shadow-orange-300 shadow-md z-20 w-full">
-      <div className="max-w-7xl mx-auto py-2 px-10 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-10 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center space-x-2 ">
-          <Link to={"/"}>
-            <img
-              src="/images/logo.png"
-              alt="Logo"
-              className="lg:h-[4vw] h-[9vh] object-cover"
-            />
-          </Link>
-        </div>
+        <Link to="/" onClick={() => setIsOpen(false)}>
+          <img
+            src="/images/logo.png"
+            alt="Logo"
+            className="lg:h-[4vw] h-[7vh] object-cover"
+          />
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-5 items-center">
-          <Link to={"/"}>
-            <span className={navItemClass("/")}>Home</span>
+          <Link to="/" className={navItemClass("/")}>
+            Home
           </Link>
-          <Link to={"/donate"}>
-            <span className={navItemClass("/donate")}>Donate</span>
+          <Link to="/donate" className={navItemClass("/donate")}>
+            Donate
           </Link>
-          <Link to={"/about-us"}>
-            <span className={navItemClass("/about-us")}>About Us</span>
+          <Link to="/about-us" className={navItemClass("/about-us")}>
+            About Us
           </Link>
-          <Link to={"/contact"}>
-            <span className={navItemClass("/contact")}>Contact Us</span>
+          <Link to="/contact" className={navItemClass("/contact")}>
+            Contact Us
           </Link>
-          <Link to={"/login"}>
+          <Link to="/login">
             <button className="bg-red-600 cursor-pointer text-white px-4 py-2 rounded hover:bg-red-700 transition">
               Login / Signup
             </button>
           </Link>
-          <Link to={"/profile"}>
-            <User className="w-10 h-10 text-gray-700 bg-red-500 p-3 rounded-full hover:text-white cursor-pointer" />
+          <Link to="/profile">
+            <User className="w-10 h-10 text-gray-700 bg-red-500 p-2 rounded-full hover:text-white cursor-pointer" />
           </Link>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X size={24} /> : <Menu size={40} />}
+            {isOpen ? <X size={32} /> : <Menu size={36} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu Items */}
       {isOpen && (
-        <div className="md:hidden flex flex-col px-4 pb-4 space-y-3 text-3xl">
-          <Link to={"/"}>
-            <span className={navItemClass("/")}>Home</span>
+        <div className="md:hidden flex flex-col px-6 py-4 space-y-4 text-xl bg-white shadow-inner">
+          <Link to="/" onClick={() => setIsOpen(false)} className={navItemClass("/")}>
+            Home
           </Link>
-          <Link to={"/donate"}>
-            <span className={navItemClass("/donate")}>Donate</span>
+          <Link to="/donate" onClick={() => setIsOpen(false)} className={navItemClass("/donate")}>
+            Donate
           </Link>
-          <Link to={"/about-us"}>
-            <span className={navItemClass("/about-us")}>About Us</span>
+          <Link to="/about-us" onClick={() => setIsOpen(false)} className={navItemClass("/about-us")}>
+            About Us
           </Link>
-          <Link to={"/contact"}>
-            <span className={navItemClass("/contact")}>Contact Us</span>
+          <Link to="/contact" onClick={() => setIsOpen(false)} className={navItemClass("/contact")}>
+            Contact Us
           </Link>
-          <Link to={"/login"}>
-            <button className="w-full bg-[#E53935] text-white px-4 py-2 rounded hover:bg-white transition">
+          <Link to="/login" onClick={() => setIsOpen(false)}>
+            <button className="w-full bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">
               Login / Signup
             </button>
           </Link>
-          <Link to={"/profile"}>
-          <User className="w-6 h-6 text-gray-700 hover:text-red-600 mx-auto mt-2" />
-          
+          <Link to="/profile" onClick={() => setIsOpen(false)} className="mx-auto">
+            <User className="w-8 h-8 text-gray-700 hover:text-red-600" />
           </Link>
         </div>
       )}

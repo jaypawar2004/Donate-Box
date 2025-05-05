@@ -238,7 +238,7 @@ const DonateDetails = ({ strokeWidth = 8, percentage = 40 } ) => {
       <h1 className="text-2xl text-black">Document</h1>
       <hr className="w-full mb-5" />
       <img
-        src="https://plus.unsplash.com/premium_vector-1714148691911-5e79c7aa7454?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://images.unsplash.com/photo-1584445584400-1a7cc5de77ae?q=80&w=1960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Document"
       />
     </div>
