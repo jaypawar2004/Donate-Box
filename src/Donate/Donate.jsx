@@ -9,7 +9,7 @@ const Donate = () => {
     <>
     <NavBar />
     <div className=''>
-        <div className="w-full h-[55vh] relative bg-red-600 ">
+        <div className="w-full h-[55vh] relative ">
             <div
             className={`w-full h-full bg-cover bg-center`}
             style={{

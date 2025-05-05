@@ -14,7 +14,7 @@ const Contact_Us = () => {
     </div>
 
     {/* Banner Section */}
-    <div className="w-full h-[55vh] relative bg-red-600 mt-[4.1vw]">
+    <div className="w-full h-[55vh] relative mt-[4.1vw]">
       <div
         className="w-full h-full bg-cover bg-center"
         style={{
