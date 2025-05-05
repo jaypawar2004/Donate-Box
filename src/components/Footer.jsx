@@ -118,7 +118,7 @@ const Footer = () => {
               <span>+91 8305425799</span>
             </li>
             <li className="flex items-start space-x-2">
-              <MapPin size={18} />
+              <MapPin size={40} />
               <span>
                 Plot No. 12, MP Nagar Zone 2, Near DB Mall, Bhopal, Madhya
                 Pradesh – 462011
