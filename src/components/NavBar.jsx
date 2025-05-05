@@ -32,8 +32,8 @@ const NavBar = () => {
           <Link to={"/"}>
             <span className={navItemClass("/")}>Home</span>
           </Link>
-          <Link to={"/fundraise"}>
-            <span className={navItemClass("/fundraise")}>Donate</span>
+          <Link to={"/donate"}>
+            <span className={navItemClass("/donate")}>Donate</span>
           </Link>
           <Link to={"/about-us"}>
             <span className={navItemClass("/about-us")}>About Us</span>
@@ -65,8 +65,8 @@ const NavBar = () => {
           <Link to={"/"}>
             <span className={navItemClass("/")}>Home</span>
           </Link>
-          <Link to={"/fundraise"}>
-            <span className={navItemClass("/fundraise")}>Donate</span>
+          <Link to={"/donate"}>
+            <span className={navItemClass("/donate")}>Donate</span>
           </Link>
           <Link to={"/about-us"}>
             <span className={navItemClass("/about-us")}>About Us</span>
