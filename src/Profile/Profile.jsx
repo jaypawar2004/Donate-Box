@@ -3,16 +3,16 @@ import React from "react";
 const Profile = () => {
   return (
     <div className="w-full bg-red-500">
-      <div className="bg-white h-[80px] w-full"></div>
-      <div className="w-full h-[50vh] ">
+      <div className="bg-white h-[50px] w-full"></div>
+      {/* <div className="w-full h-[50vh] ">
       
         <img
           className="w-full h-full object-center object-cover "
           src="https://images.unsplash.com/photo-1522661067900-ab829854a57f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt=""
         />
-      </div>
-
+      </div> */}
+{/*  */}
       <div>
         
         <section class="bg-white p-1 xs:p-8 w-full rounded-lg">
