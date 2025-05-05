@@ -32,7 +32,7 @@ const Support_Info = () => {
 
       {/* Right Icons Section */}
       <div className="w-full lg:w-[25vw] grid grid-cols-2 lg:gap-y-12 lg:gap-x-10 gap-y-12 justify-items-center">
-        {["BoxLogo1.png", "BoxLogo2.png", "BoxLogo3.png", "BoxLogo4.png"].map((img, i) => (
+        {["BoxLogo1.png", "Boxlogo2.png", "Boxlogo3.png", "Boxlogo4.png"].map((img, i) => (
           <div
             key={i}
             className="relative w-24 h-24 sm:w-28 sm:h-28 bg-[#FDF5F5] rounded-full flex items-center justify-center"

@@ -6,44 +6,21 @@ const people = [
     name: "Dhruv Pandey",
     title: "Campaigner",
     image: "https://images.unsplash.com/photo-1676083140049-c106e01c754c?w=600&auto=format&fit=crop",
-    description: "With support, we successfully raised for a critical liver transplant...",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum beatae cum esse ut accusamus sunt laudantium omnis ipsum atque incidunt harum, culpa earum repellat temporibus. Facere, laboriosam a! Quisquam at expedita libero aspernatur amet quis voluptas asperiores debitis tempore aliquid itaque recusandae, nam eligendi omnis aut ",
   },
   {
     name: "Dhruv Pandey",
     title: "Campaigner",
     image: "https://images.unsplash.com/photo-1676083140049-c106e01c754c?w=600&auto=format&fit=crop",
-    description: "With support, we successfully raised for a critical liver transplant...",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum beatae cum esse ut accusamus sunt laudantium omnis ipsum atque incidunt harum, culpa earum repellat temporibus. Facere, laboriosam a! Quisquam at expedita libero aspernatur amet quis voluptas asperiores debitis tempore aliquid itaque recusandae, nam eligendi omnis aut ",
   },
   {
     name: "Dhruv Pandey",
     title: "Campaigner",
     image: "https://images.unsplash.com/photo-1676083140049-c106e01c754c?w=600&auto=format&fit=crop",
-    description: "With support, we successfully raised for a critical liver transplant...",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum beatae cum esse ut accusamus sunt laudantium omnis ipsum atque incidunt harum, culpa earum repellat temporibus. Facere, laboriosam a! Quisquam at expedita libero aspernatur amet quis voluptas asperiores debitis tempore aliquid itaque recusandae, nam eligendi omnis aut ",
   },
-  {
-    name: "Dhruv Pandey",
-    title: "Campaigner",
-    image: "https://images.unsplash.com/photo-1676083140049-c106e01c754c?w=600&auto=format&fit=crop",
-    description: "With support, we successfully raised for a critical liver transplant...",
-  },
-  {
-    name: "Dhruv Pandey",
-    title: "Campaigner",
-    image: "https://images.unsplash.com/photo-1676083140049-c106e01c754c?w=600&auto=format&fit=crop",
-    description: "With support, we successfully raised for a critical liver transplant...",
-  },
-  {
-    name: "Dhruv Pandey",
-    title: "Campaigner",
-    image: "https://images.unsplash.com/photo-1676083140049-c106e01c754c?w=600&auto=format&fit=crop",
-    description: "With support, we successfully raised for a critical liver transplant...",
-  },
-  {
-    name: "Dhruv Pandey",
-    title: "Campaigner",
-    image: "https://images.unsplash.com/photo-1676083140049-c106e01c754c?w=600&auto=format&fit=crop",
-    description: "With support, we successfully raised for a critical liver transplant...",
-  },
+ 
   // ... (repeat or add more unique entries)
 ];
 
@@ -79,6 +56,7 @@ const WallOfLove = () => {
   return (
     <div className="lg:w-full lg:min-h-screen bg-[#FBE6E4] flex flex-col items-center justify-start py-10">
       {/* Heading */}
+      
       <h1 className="text-4xl font-bold text-gray-800 mb-2">
         Wall of <span className="text-red-500">Love</span>!
       </h1>
