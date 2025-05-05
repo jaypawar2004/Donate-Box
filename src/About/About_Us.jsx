@@ -51,8 +51,8 @@ const About_Us = () => {
 
       <div className="lg:w-full lg:h-[80vh] lg:flex">
         <div className="lg:w-[90%] lg:h-[80%] h-[100%] text-white bg-[#E53935] lg:p-30 p-5">
-          <h1 className="lg:text-xl text-3xl">Health Comes First</h1>
-          <div className="h-1 bg-white w-30 rounded-full"></div>
+          <h1 className="lg:text-4xl text-3xl">Health Comes First</h1>
+          <div className="h-1 bg-white w-36 rounded-full mb-8 mt-2"></div>
           <p className="lg:text-lg text-xl">
             Sanyogati is dedicated to supporting a wide range of causes, from
             nonprofit initiatives to personal and creative endeavors. However,
