@@ -84,19 +84,19 @@ const About = () => {
           {/* Left: Images */}
           <div className="w-full lg:w-[40%] h-full flex flex-col">
             <img
-              className="w-full max-h-56 sm:h-64 lg:h-1/2 object-cover"
+              className="w-full max-h-72 sm:h-64 lg:h-1/2 object-cover"
               src="/square/1.jpg"
               alt=""
             />
             <img
-              className="w-full max-h-56 sm:h-64 lg:h-1/2 object-cover"
+              className="w-full max-h-72 sm:h-64 lg:h-1/2 object-cover"
               src="/square/4.jpg"
               alt=""
             />
           </div>
 
           {/* Right: Text Box */}
-          <div className="w-full lg:w-[63%] z-10 leading-relaxed bg-white rounded-2xl shadow-2xl p-6 sm:p-10 lg:absolute lg:top-[6%] lg:right-0 lg:h-[80%] flex flex-col justify-between">
+          <div className="w-full lg:w-[63%] z-10 leading-relaxed bg-white rounded-2xl shadow-2xl p-6 sm:p-10 lg:absolute lg:top-[6%] lg:right-0 lg:h-[90%] flex flex-col justify-between">
             <div>
               <h1 className="text-3xl sm:text-4xl font-bold">
                 A team of{" "}

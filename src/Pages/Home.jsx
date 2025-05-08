@@ -6,26 +6,26 @@ const Home = () => {
   const slides = [
     {
       id: 1,
-      image: "/images/slider.jfif",
+      image: "/square/1.jpg",
       title: "Help The Poor To Build A Better World",
       subtitle: "Your donation can help educate thousands of people and make the world more beautiful.",
     },
     {
       id: 2,
-      image: "/images/slider.jfif",
+      image: "/square/2.jpg",
       title: "Support Education for All",
       subtitle: "Together, we can change lives with your generous support.",
     },
     {
       id: 3,
-      image: "/images/slider.jfif",
+      image: "/square/3.jpg",
       title: "Create a Brighter Future",
       subtitle: "Every donation brings hope to those in need.",
     },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const autoSlideInterval = 5000; // 5 seconds
+  const autoSlideInterval = 3000; // 3 seconds
 
   useEffect(() => {
     const timer = setInterval(() => {
