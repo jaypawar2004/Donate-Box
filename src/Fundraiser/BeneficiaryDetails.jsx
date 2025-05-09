@@ -1,5 +1,5 @@
 
-
+import "../Donate/DonateDetails.css";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; // Updated import for React Router v6
 
@@ -798,7 +798,7 @@ const BeneficiaryDetails = () => {
       {/* Modal for Form */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/50 backdrop-opacity-40 flex items-center justify-center z-50 ">
-          <div className="bg-white rounded-xl p-4 sm:p-6 max-w-lg w-full max-h-[80vh] overflow-y-auto relative">
+          <div className="example bg-white rounded-2xl  p-4 sm:p-6 max-w-lg w-full max-h-[80vh] overflow-y-auto relative">
             <button
               onClick={closeModal}
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"

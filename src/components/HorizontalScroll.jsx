@@ -70,20 +70,20 @@ const HorizontalScroll = () => {
     <div className="flex flex-col w-full  items-center ">
     <Link to={"/donate"}>
     
-      <button className="border-2 border-white rounded-lg lg:w-[13vw] px-6 bg-[#E53935] text-white py-2">
+      <button className="border-2 border-white rounded-lg cursor-pointer lg:w-[13vw] px-6 bg-[#E53935] text-white py-2">
         Donate Now
       </button>
     </Link>
       <br />
       <Link to={"/contact"}>
-      <button className="border-2 border-white rounded-lg lg:w-[13vw] px-6 bg-[#E53931] text-white py-2">
+      <button className="border-2 border-white rounded-lg cursor-pointer lg:w-[13vw] px-6 bg-[#E53931] text-white py-2">
         Collaborate with Us
       </button>
       </Link>
 
       <br />
       <Link>
-      <button className="border-2 border-white rounded-lg lg:w-[13vw] px-6 bg-white text-red-500 py-2">
+      <button className="border-2 border-white rounded-lg cursor-pointer lg:w-[13vw] px-6 bg-white text-red-500 py-2">
         Career
       </button>
       </Link>
