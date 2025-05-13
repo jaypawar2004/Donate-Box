@@ -1,29 +1,39 @@
-
 import "../Donate/DonateDetails.css";
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Updated import for React Router v6
+import React, { useState, useRef } from "react"; // Added useRef for scrolling
+import { Link, useNavigate } from "react-router-dom";
 
 const BeneficiaryDetails = () => {
   const navigate = useNavigate();
-  const [selectedOption, setSelectedOption] = useState("Registered NGO");
+  const [selectedOption, setSelectedOption] = useState("my self"); // Initially null, no form shown
   const [gender, setGender] = useState("male");
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
-  const [imageUrl, setImageUrl] = useState(null); // Initially null, ya koi invalid URL daal sakte ho
+  const [imageUrl, setImageUrl] = useState(null);
   const [imageError, setImageError] = useState(false);
 
+  // Ref to scroll to the form section
+  const formRef = useRef(null);
+
   const placeholderImage =
-    "https://thumb.ac-illust.com/b1/b170870007dfa419295d949814474ab2_t.jpeg"; // Default placeholder image URL
+    "https://thumb.ac-illust.com/b1/b170870007dfa419295d949814474ab2_t.jpeg";
 
   const handleImageError = () => {
     setImageError(true);
   };
+
   const handleSelection = (option) => {
     setSelectedOption(option);
-    setIsModalOpen(true); // Open modal when an option is selected
+    // Scroll to the form section
+    if (formRef.current) {
+      formRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false); // Close modal
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setImageUrl(url);
+      setImageError(false);
+    }
   };
 
   const renderFields = () => {
@@ -31,28 +41,57 @@ const BeneficiaryDetails = () => {
       case "my self":
         return (
           <div className="mt-6 border-t pt-6">
-            <div class="flex flex-col space-y-5 items-center justify-center">
-              {/* <img className="rounded-full w-[120px] h-[120px] object-cover object-center" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
-              <img
-                src={imageUrl && !imageError ? imageUrl : placeholderImage}
-                alt="User Photo"
-                className="w-32 h-32 rounded-full object-cover"
-                onError={handleImageError}
-              />
-              <p>Display photo</p>
-              <label>
-                <input type="file" hidden />
-                <div class="flex w-28 h-9 px-2 flex-col bg-[#E7000B] rounded-full shadow text-white text-xs font-semibold leading-4 items-center justify-center cursor-pointer focus:outline-none">
-                  Choose File
-                </div>
-              </label>
-            </div>
             <div className="mt-6">
-              <label className="block mb-2">I'm</label>
+              <label className="block mb-2">Beneficiary Name</label>
               <input
                 type="text"
-                placeholder="Name"
-                className="w-full border-b p-1 focus:outline-none"
+                placeholder="Beneficiary Name"
+                className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+              />
+            </div>
+            <div className="mt-4">
+              <label className="block mb-2">Location</label>
+              <div className="flex gap-2">
+                <select
+                  className="w-1/2 px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                  placeholder="State"
+                >
+                  <option value="">Select State</option>
+                  <option value="State1">Madhaya Pradesh</option>
+                  <option value="State2">State2</option>
+                  <option value="State3">State3</option>
+                  {/* Add more states as needed */}
+                </select>
+                <select
+                  className="w-1/2 px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                  placeholder="City"
+                >
+                  <option value="">Select City</option>
+                  {/* Cities will be populated based on selected state */}
+                  <option value="Bhopal">Bhopal</option>
+                </select>
+              </div>
+            </div>
+            <div className='mt-4'>
+                <label className="block mb-1 text-sm text-gray-700">Phone Number</label>
+                <div className="flex">
+                  <span className="px-4 py-2 bg-gray-200 border border-r-0 rounded-l-md text-gray-700">+91</span>
+                  <input
+                    type="tel"
+                    name="phone"
+                    // value={formData.phone}
+                    // onChange={handleChange}
+                    className="w-full px-4 py-2 border border-red-400 rounded-r-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                    placeholder="Beneficiary Phone number"
+                  />
+                </div>
+              </div>
+            <div className="mt-4">
+              <label className="block mb-2">Address</label>
+              <input
+                type="text"
+                placeholder="Full Address beneficiary"
+                className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
             <div className="mt-4">
@@ -61,475 +100,95 @@ const BeneficiaryDetails = () => {
                 <input
                   type="number"
                   placeholder="Age"
-                  className="w-1/2 border-b p-1 focus:outline-none"
+                  className="w-1/2 px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
-                <select className="w-1/2 border-b p-1 focus:outline-none">
+                <select className="w-1/2 px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
                   <option value="years">years</option>
                   <option value="months">months</option>
                 </select>
               </div>
             </div>
-            <div className="mt-4">
-              <label className="block mb-2">Gender</label>
-              <div className="flex gap-2">
-                {["male", "female", "others"].map((g) => (
-                  <button
-                    key={g}
-                    type="button"
-                    onClick={() => setGender(g)}
-                    className={`flex-1 py-1 rounded ${
-                      gender === g
-                        ? "bg-[#E7000B] text-white"
-                        : "border text-gray-700"
-                    }`}
-                  >
-                    {gender === g ? "✓ " : ""}
-                    {g.charAt(0).toUpperCase() + g.slice(1)}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div className="mt-4">
-              <label className="block mb-2">I'm residing in</label>
-              <input
-                type="text"
-                placeholder="Ex: Bengaluru"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-          </div>
-        );
-      case "My family":
-        return (
-          <div className="mt-6 border-t pt-6">
-            <div class="flex flex-col space-y-5 items-center justify-center">
-              {/* <img className="rounded-full w-[120px] h-[120px] object-cover object-center" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
-              <img
-                src={imageUrl && !imageError ? imageUrl : placeholderImage}
-                alt="User Photo"
-                className="w-32 h-32 rounded-full object-cover"
-                onError={handleImageError}
-              />
-              <p>Display photo</p>
-              <label>
-                <input type="file" hidden />
-                <div class="flex w-28 h-9 px-2 flex-col bg-[#E7000B] rounded-full shadow text-white text-xs font-semibold leading-4 items-center justify-center cursor-pointer focus:outline-none">
-                  Choose File
-                </div>
-              </label>
-            </div>
-            <div className="mt-6">
-              <input
-                type="text"
-                placeholder="Relative's Name"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            <div className="mt-6">
-              <label className="block mb-2">I'm</label>
-              <input
-                type="text"
-                placeholder="Name"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            <div className="mt-4">
-              <label className="block mb-2">Age</label>
-              <div className="flex gap-2">
-                <input
-                  type="number"
-                  placeholder="Age"
-                  className="w-1/2 border-b p-1 focus:outline-none"
-                />
-                <select className="w-1/2 border-b p-1 focus:outline-none">
-                  <option value="years">years</option>
-                  <option value="months">months</option>
-                </select>
-              </div>
-              <div className="flex items-center h-full gap-2 mt-4">
-                <p>is my</p>
-                <select className="focus:outline-none border-b p-3">
-                  <optgroup label="PARENT">
-                    <option value="father">father</option>
-                    <option value="mother">mother</option>
-                  </optgroup>
-                  <optgroup label="SPOUSE">
-                    <option value="husband">husband</option>
-                    <option value="wife">wife</option>
-                  </optgroup>
-                  <optgroup label="CHILD">
-                    <option value="son">son</option>
-                    <option value="daughter">daughter</option>
-                  </optgroup>
-                  <optgroup label="SIBLING">
-                    <option value="brother">brother</option>
-                    <option value="sister">sister</option>
-                    <option value="cousin">cousin</option>
-                  </optgroup>
-                  <optgroup label="OTHERS">
-                    <option value="uncle">Uncle</option>
-                    <option value="grandfather">grandfather</option>
-                    <option value="grandmother">grandmother</option>
-                    <option value="granddaughter">granddaughter</option>
-                    <option value="grandson">grandson</option>
-                    <option value="nephew">nephew</option>
-                    <option value="niece">niece</option>
-                    <option value="other">Other</option>
-                  </optgroup>
-                </select>
-              </div>
-            </div>
-            <div className="mt-4">
-              <label className="block mb-2">I'm residing in</label>
-              <input
-                type="text"
-                placeholder="Ex: Bengaluru"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            <div className="mt-4">
-              <label className="block mb-2">Phone Number</label>
-              <input
-                type="text"
-                placeholder="Beneficiary's mobile no."
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-          </div>
-        );
-      case "My friends":
-        return (
-          <div className="mt-6 border-t pt-6">
-            <div class="flex flex-col space-y-5 items-center justify-center">
-              {/* <img className="rounded-full w-[120px] h-[120px] object-cover object-center" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
-              <img
-                src={imageUrl && !imageError ? imageUrl : placeholderImage}
-                alt="User Photo"
-                className="w-32 h-32 rounded-full object-cover"
-                onError={handleImageError}
-              />
-              <p>Display photo</p>
-              <label>
-                <input type="file" hidden />
-                <div class="flex w-28 h-9 px-2 flex-col bg-[#E7000B] rounded-full shadow text-white text-xs font-semibold leading-4 items-center justify-center cursor-pointer focus:outline-none">
-                  Choose File
-                </div>
-              </label>
-            </div>
-            <div className="mt-6">
-              <input
-                type="text"
-                placeholder="Write friend's full name"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            <div className="mt-6">
-              <label className="block mb-2">I'm</label>
-              <input
-                type="text"
-                placeholder="Name"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            <div className="mt-4">
-              <label className="block mb-2">Age</label>
-              <div className="flex gap-2">
-                <input
-                  type="number"
-                  placeholder="Age"
-                  className="w-1/2 border-b p-1 focus:outline-none"
-                />
-                <select className="w-1/2 border-b p-1 focus:outline-none">
-                  <option value="years">years</option>
-                  <option value="months">months</option>
-                </select>
-              </div>
-            </div>
-            <div className="mt-4">
-              <label className="block mb-2">Gender</label>
-              <div className="flex gap-2">
-                {["male", "female", "others"].map((g) => (
-                  <button
-                    key={g}
-                    type="button"
-                    onClick={() => setGender(g)}
-                    className={`flex-1 py-1 rounded ${
-                      gender === g
-                        ? "bg-[#E7000B] text-white"
-                        : "border text-gray-700"
-                    }`}
-                  >
-                    {gender === g ? "✓ " : ""}
-                    {g.charAt(0).toUpperCase() + g.slice(1)}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div className="mt-4">
-              <label className="block mb-2">I'm residing in</label>
-              <input
-                type="text"
-                placeholder="Ex: Bengaluru"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            <div className="mt-4">
-              <label className="block mb-2">Phone Number</label>
-              <input
-                type="text"
-                placeholder="Beneficiary's mobile no."
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-          </div>
-        );
-      case "My family Group":
-        return (
-          <div className="mt-6 border-t pt-6">
-          <div class="flex flex-col space-y-5 items-center justify-center">
-            {/* <img className="rounded-full w-[120px] h-[120px] object-cover object-center" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
-            <img
-              src={imageUrl && !imageError ? imageUrl : placeholderImage}
-              alt="User Photo"
-              className="w-32 h-32 rounded-full object-cover"
-              onError={handleImageError}
-            />
-            <p>Display photo</p>
-            <label>
-              <input type="file" hidden />
-              <div class="flex w-28 h-9 px-2 flex-col bg-[#E7000B] rounded-full shadow text-white text-xs font-semibold leading-4 items-center justify-center cursor-pointer focus:outline-none">
-                Choose File
-              </div>
-            </label>
-          </div>
-          <div className="mt-6">
-            <input
-              type="text"
-              placeholder="Group / family name"
-              className="w-full border-b p-1 focus:outline-none"
-            />
-          </div>
-          <div className="mt-6">
-              <label className="block mb-2">comprises of 
-              members</label>
-              <input
-                type="text"
-                placeholder="Ex: 12"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-          {/* <div className="mt-4">
-            <label className="block mb-2">Age</label>
-            <div className="flex gap-2">
-              <input
-                type="number"
-                placeholder="Age"
-                className="w-1/2 border-b p-1 focus:outline-none"
-              />
-              <select className="w-1/2 border-b p-1 focus:outline-none">
-                <option value="years">years</option>
-                <option value="months">months</option>
-              </select>
-            </div>
-          </div> */}
-          <div className="mt-4">
-            <label className="block mb-2">is Based out of </label>
-            <input
-              type="text"
-              placeholder="Ex: Bengaluru"
-              className="w-full border-b p-1 focus:outline-none"
-            />
-          </div>
-          
-          <div className="w-full p-4 bg-zinc-100 mt-5">
-            <h4 className="text-center text-lg">Contact details</h4>
-            <p className="text-center ">Representative could be any member of the group/family</p>
-
-            <div className="mt-4 ">
-            <label className="block mb-2">Name</label>
-            <input
-              type="text"
-              placeholder="Name"
-              className="w-full border-b p-1 focus:outline-none"
-            />
-          </div>
-            <div className="mt-4">
-            <label className="block mb-2">Phone Number</label>
-            <input
-              type="text"
-              placeholder="Mobile number"
-              className="w-full border-b p-1 focus:outline-none"
-            />
-          </div>
-          </div>
-         
-        </div>
-        );
-      case "My friends Group":
-        return (
-          <div className="mt-6 border-t pt-6">
-            <div class="flex flex-col space-y-5 items-center justify-center">
-              {/* <img className="rounded-full w-[120px] h-[120px] object-cover object-center" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
-              <img
-                src={imageUrl && !imageError ? imageUrl : placeholderImage}
-                alt="User Photo"
-                className="w-32 h-32 rounded-full object-cover"
-                onError={handleImageError}
-              />
-              <p>Display photo</p>
-              <label>
-                <input type="file" hidden />
-                <div class="flex w-28 h-9 px-2 flex-col bg-[#E7000B] rounded-full shadow text-white text-xs font-semibold leading-4 items-center justify-center cursor-pointer focus:outline-none">
-                  Choose File
-                </div>
-              </label>
-            </div>
-            <div className="mt-6">
-              <input
-                type="text"
-                placeholder="Group Name"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            <div className="mt-6">
-              <label className="block mb-2">comprises of 
-              members</label>
-              <input
-                type="text"
-                placeholder="Ex: 12"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            {/* <div className="mt-4">
-              <label className="block mb-2">Age</label>
-              <div className="flex gap-2">
-                <input
-                  type="number"
-                  placeholder="Age"
-                  className="w-1/2 border-b p-1 focus:outline-none"
-                />
-                <select className="w-1/2 border-b p-1 focus:outline-none">
-                  <option value="years">years</option>
-                  <option value="months">months</option>
-                </select>
-              </div>
-            </div> */}
-            <div className="mt-4">
-              <label className="block mb-2">Based out of </label>
-              <input
-                type="text"
-                placeholder="Ex: Bengaluru"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            
-            <div className="w-full p-4 bg-zinc-100 mt-5">
-              <h4 className="text-center text-lg">Contact details</h4>
-              <p className="text-center ">Representative could be any member of the group/family</p>
-
-              <div className="mt-4 ">
-              <label className="block mb-2">Name</label>
-              <input
-                type="text"
-                placeholder="Name"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-              <div className="mt-4">
-              <label className="block mb-2">Phone Number</label>
-              <input
-                type="text"
-                placeholder="Mobile number"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            </div>
-           
-          </div>
-        );
-      case "Others Group":
-        return (
-          <div className="mt-6 border-t pt-6">
-            <div class="flex flex-col space-y-5 items-center justify-center">
-              {/* <img className="rounded-full w-[120px] h-[120px] object-cover object-center" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
-              <img
-                src={imageUrl && !imageError ? imageUrl : placeholderImage}
-                alt="User Photo"
-                className="w-32 h-32 rounded-full object-cover"
-                onError={handleImageError}
-              />
-              <p>Display photo</p>
-              <label>
-                <input type="file" hidden />
-                <div class="flex w-28 h-9 px-2 flex-col bg-[#E7000B] rounded-full shadow text-white text-xs font-semibold leading-4 items-center justify-center cursor-pointer focus:outline-none">
-                  Choose File
-                </div>
-              </label>
-            </div>
-            <div className="mt-6">
-              <input
-                type="text"
-                placeholder="Funds raised will help"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            {/* <div className="mt-4">
-              <label className="block mb-2">Age</label>
-              <div className="flex gap-2">
-                <input
-                  type="number"
-                  placeholder="Age"
-                  className="w-1/2 border-b p-1 focus:outline-none"
-                />
-                <select className="w-1/2 border-b p-1 focus:outline-none">
-                  <option value="years">years</option>
-                  <option value="months">months</option>
-                </select>
-              </div>
-            </div> */}
-            <div className="mt-4">
-              <label className="block mb-2">Based out of </label>
-              <input
-                type="text"
-                placeholder="Ex: Bengaluru"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            <div className="mt-4">
-              <label className="block mb-2">Phone Number</label>
-              <input
-                type="text"
-                placeholder="Beneficiary's mobile no."
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            
           </div>
         );
       case "Others":
         return (
           <div className="mt-6 border-t pt-6">
-            <div class="flex flex-col space-y-5 items-center justify-center">
-              {/* <img className="rounded-full w-[120px] h-[120px] object-cover object-center" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
-              <img
-                src={imageUrl && !imageError ? imageUrl : placeholderImage}
-                alt="User Photo"
-                className="w-32 h-32 rounded-full object-cover"
-                onError={handleImageError}
-              />
-              <p>Display photo</p>
-              <label>
-                <input type="file" hidden />
-                <div class="flex w-28 h-9 px-2 flex-col bg-[#E7000B] rounded-full shadow text-white text-xs font-semibold leading-4 items-center justify-center cursor-pointer focus:outline-none">
-                  Choose File
-                </div>
-              </label>
+            <div className="mt-4">
+              <label className="block mb-2">Beneficiary Name & Relation</label>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  placeholder="Beneficiary's Name"
+                  className="w-1/2 px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                />
+                <select className="w-1/2 px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                  <option value="">Select Relation</option>
+                  <option value="Father">Father</option>
+                  <option value="Mother">Mother</option>
+                  <option value="Grandfater">Grandfater</option>
+                  <option value="Grandmother">Grandmother</option>
+                  <option value="Hasbund">Hasbund</option>
+                  <option value="Wife">Wife</option>
+                  <option value="Son">Son</option>
+                  <option value="Doughter">Doughter</option>
+                  <option value="Grand son">Grand son</option>
+                  <option value="Grand doughter">Grand doughter</option>
+                  <option value="Brother">Brother</option>
+                  <option value="Sister">Sister</option>
+                  <option value="Friend">Friend</option>
+                  <option value="Family">Family</option>
+                  <option value="Cousins">Cousins</option>
+                  <option value="Uncle">Uncle</option>
+                  <option value="Aunt">Aunt</option>
+                  <option value="other">Other</option>
+                  <option value="other">Other</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
             </div>
-            <div className="mt-6">
+            <div className="mt-4">
+              <label className="block mb-2">Location</label>
+              <div className="flex gap-2">
+                <select
+                  className="w-1/2 px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                  placeholder="State"
+                >
+                  <option value="">Select State</option>
+                  <option value="State1">Madhaya Pradesh</option>
+                  <option value="State2">State2</option>
+                  <option value="State3">State3</option>
+                  {/* Add more states as needed */}
+                </select>
+                <select
+                  className="w-1/2 px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                  placeholder="City"
+                >
+                  <option value="">Select City</option>
+                  {/* Cities will be populated based on selected state */}
+                  <option value="Bhopal">Bhopal</option>
+                </select>
+              </div>
+            </div>
+            <div className='mt-4'>
+                <label className="block mb-1 text-sm text-gray-700">Phone Number</label>
+                <div className="flex">
+                  <span className="px-4 py-2 bg-gray-200 border border-r-0 rounded-l-md text-gray-700">+91</span>
+                  <input
+                    type="tel"
+                    name="phone"
+                    // value={formData.phone}
+                    // onChange={handleChange}
+                    className="w-full px-4 py-2 border border-red-400 rounded-r-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                    placeholder="Beneficiary Phone number"
+                  />
+                </div>
+              </div>
+            <div className="mt-4">
+              <label className="block mb-2">Address</label>
               <input
                 type="text"
-                placeholder="Funds raised will help"
-                className="w-full border-b p-1 focus:outline-none"
+                placeholder="Full Address of beneficiary"
+                className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
             <div className="mt-4">
@@ -538,37 +197,21 @@ const BeneficiaryDetails = () => {
                 <input
                   type="number"
                   placeholder="Age"
-                  className="w-1/2 border-b p-1 focus:outline-none"
+                  className="w-1/2 px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
-                <select className="w-1/2 border-b p-1 focus:outline-none">
+                <select className="w-1/2 px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
                   <option value="years">years</option>
                   <option value="months">months</option>
                 </select>
               </div>
-            </div>
-            <div className="mt-4">
-              <label className="block mb-2">I'm residing in</label>
-              <input
-                type="text"
-                placeholder="Ex: Bengaluru"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            <div className="mt-4">
-              <label className="block mb-2">Phone Number</label>
-              <input
-                type="text"
-                placeholder="Beneficiary's mobile no."
-                className="w-full border-b p-1 focus:outline-none"
-              />
             </div>
           </div>
         );
       case "Registered NGO":
         return (
           <div className="mt-6 border-t pt-6">
-            <div class="flex flex-col space-y-5 items-center justify-center">
-              {/* <img className="rounded-full w-[120px] h-[120px] object-cover object-center" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" /> */}
+            {/* Images */}
+            {/* <div className="flex flex-col space-y-5 items-center justify-center">
               <img
                 src={imageUrl && !imageError ? imageUrl : placeholderImage}
                 alt="User Photo"
@@ -577,81 +220,68 @@ const BeneficiaryDetails = () => {
               />
               <p>Display photo</p>
               <label>
-                <input type="file" hidden />
-                <div class="flex w-28 h-9 px-2 flex-col bg-[#E7000B] rounded-full shadow text-white text-xs font-semibold leading-4 items-center justify-center cursor-pointer focus:outline-none">
+                <input type="file" hidden onChange={handleImageUpload} />
+                <div className="flex w-28 h-9 px-2 flex-col bg-[#E7000B] rounded-full shadow text-white text-xs font-semibold leading-4 items-center justify-center cursor-pointer focus:outline-none">
                   Choose File
                 </div>
               </label>
-            </div>
+            </div> */}
             <div className="mt-6">
               <input
                 type="text"
                 placeholder="Registered NGO"
-                className="w-full border-b p-1 focus:outline-none"
+                className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
             <div className="mt-6">
-              <label className="block mb-2">I'm</label>
+              <label className="block mb-2">Beneficiary Name</label>
               <input
                 type="text"
-                placeholder="Name"
-                className="w-full border-b p-1 focus:outline-none"
+                placeholder="Beneficiary Name"
+                className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
+            
+            <div className="mt-4">
+              <label className="block mb-2">Location</label>
+              <input
+                type="text"
+                placeholder="Location"
+                className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+              />
+            </div>
+            <div className='mt-4'>
+                <label className="block mb-1 text-sm text-gray-700">Phone Number</label>
+                <div className="flex">
+                  <span className="px-4 py-2 bg-gray-200 border border-r-0 rounded-l-md text-gray-700">+91</span>
+                  <input
+                    type="tel"
+                    name="phone"
+                    // value={formData.phone}
+                    // onChange={handleChange}
+                    className="w-full px-4 py-2 border border-red-400 rounded-r-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                    placeholder="Beneficiary Phone number"
+                  />
+                </div>
+              </div>
             <div className="mt-4">
               <label className="block mb-2">Age</label>
               <div className="flex gap-2">
                 <input
                   type="number"
                   placeholder="Age"
-                  className="w-1/2 border-b p-1 focus:outline-none"
+                  className="w-1/2 px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
                 />
-                <select className="w-1/2 border-b p-1 focus:outline-none">
+                <select className="w-1/2 px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
                   <option value="years">years</option>
                   <option value="months">months</option>
                 </select>
               </div>
             </div>
-            <div className="mt-4">
-              <label className="block mb-2">Gender</label>
-              <div className="flex gap-2">
-                {["male", "female", "others"].map((g) => (
-                  <button
-                    key={g}
-                    type="button"
-                    onClick={() => setGender(g)}
-                    className={`flex-1 py-1 rounded ${
-                      gender === g
-                        ? "bg-[#E7000B] text-white"
-                        : "border text-gray-700"
-                    }`}
-                  >
-                    {gender === g ? "✓ " : ""}
-                    {g.charAt(0).toUpperCase() + g.slice(1)}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div className="mt-4">
-              <label className="block mb-2">I'm residing in</label>
-              <input
-                type="text"
-                placeholder="Ex: Bengaluru"
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
-            <div className="mt-4">
-              <label className="block mb-2">Phone Number</label>
-              <input
-                type="text"
-                placeholder="Beneficiary's mobile no."
-                className="w-full border-b p-1 focus:outline-none"
-              />
-            </div>
           </div>
         );
       default:
-        return <div className="mt-6 border-t pt-6 text-gray-500"></div>;
+        return null; // No form shown initially
     }
   };
 
@@ -674,109 +304,49 @@ const BeneficiaryDetails = () => {
 
           <div className="mb-6 text-center">
             <span className="text-gray-700 font-medium">
-              This fundraiser will benefit{" "}
+              This fundraiser will benefit
             </span>
-            <select
-              value={selectedOption}
-              onChange={(e) => handleSelection(e.target.value)}
-              className="text-[#E7000B] font-semibold focus:outline-none"
-            >
-              <option value="my self">myself</option>
-              <option value="My family">my relative</option>
-              <option value="My friends">my friends</option>
-              <option value="Others">others</option>
-              <option value="Registered NGO">registered NGO</option>
-            </select>
           </div>
 
           <div className="space-y-4">
-            <button
-              className="flex-1 border border-green-200 rounded-md p-2 cursor-pointer flex items-center justify-center hover:border-green-500 w-full"
-              onClick={() => handleSelection("my self")}
-            >
-              👤 My Self
-            </button>
-
-            <div>
-              <p className="font-medium mb-2">
-                My family,{" "}
-                <span className="text-gray-500">next of kin & relatives</span>
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  className="flex-1 border border-green-200 rounded-md p-2 cursor-pointer flex items-center justify-center hover:border-green-500 w-full"
-                  onClick={() => handleSelection("My family")}
-                >
-                  👤 Individual
-                </button>
-                <button
-                  className="flex-1 border border-gray-300 rounded-md cursor-pointer p-2 flex items-center justify-center hover:border-green-500 w-full"
-                  onClick={() => handleSelection("My family Group")}
-                >
-                  👥 Group
-                </button>
-              </div>
-            </div>
-
-            <div>
-              <p className="font-medium mb-2">
-                My friends,{" "}
-                <span className="text-gray-500">
-                  classmates, colleagues & people I know
-                </span>
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  className="flex-1 border border-green-200 rounded-md p-2 cursor-pointer flex items-center justify-center hover:border-green-500 w-full"
-                  onClick={() => handleSelection("My friends")}
-                >
-                  👤 Individual
-                </button>
-                <button
-                  className="flex-1 border border-gray-300 rounded-md p-2 cursor-pointer flex items-center justify-center hover:border-green-500 w-full"
-                  onClick={() => handleSelection("My friends Group")}
-                >
-                  👥 Group
-                </button>
-              </div>
-            </div>
-
-            <div>
-              <p className="font-medium mb-2">
-                Others{" "}
-                <span className="text-gray-500">
-                  (everyone else: people, animals, businesses, communities etc)
-                </span>
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  className="flex-1 border border-green-200 rounded-md p-2 cursor-pointer flex items-center justify-center hover:border-green-500 w-full"
-                  onClick={() => handleSelection("Others")}
-                >
-                  👤 Individual
-                </button>
-                <button
-                  className="flex-1 border border-gray-300 rounded-md p-2 cursor-pointer flex items-center justify-center hover:border-green-500 w-full"
-                  onClick={() => handleSelection("Others Group")}
-                >
-                  👥 Group
-                </button>
-              </div>
-            </div>
-
-            <div>
+            {/* Three buttons: My Self, Other, NGO */}
+            <div className="flex items-center justify-center flex-col sm:flex-row gap-4">
               <button
-                className="w-full bg-[#E7000B] text-white p-4 rounded-md hover:bg-red-600 transition cursor-pointer"
+                className={`py-3 px-10 rounded-md border transition text-sm sm:text-base font-medium ${
+                  selectedOption === "my self"
+                    ? "bg-[#E7000B] text-white"
+                    : "border-red-200 hover:border-red-500"
+                }`}
+                onClick={() => handleSelection("my self")}
+              >
+                👤 My Self
+              </button>
+              <button
+                className={`py-3 px-10 rounded-md border transition text-sm sm:text-base font-medium ${
+                  selectedOption === "Others"
+                    ? "bg-[#E7000B] text-white"
+                    : "border-red-200 hover:border-red-500"
+                }`}
+                onClick={() => handleSelection("Others")}
+              >
+                👥 Other
+              </button>
+              <button
+                className={`py-3 px-10 rounded-md border transition text-sm sm:text-base font-medium ${
+                  selectedOption === "Registered NGO"
+                    ? "bg-[#E7000B] text-white"
+                    : "border-red-200 hover:border-red-500"
+                }`}
                 onClick={() => handleSelection("Registered NGO")}
               >
-                <strong className="block">🏢 Registered NGO</strong>
-                <span className="text-sm block mt-1">
-                  A registered not-for-profit that has a valid PAN card issued
-                  in its name
-                </span>
+                🏢 NGO
               </button>
             </div>
 
+            {/* Form Section */}
+            <div ref={formRef}>{selectedOption && renderFields()}</div>
+
+            {/* Navigation Buttons */}
             <div className="flex justify-end gap-x-3 sm:gap-x-5 mt-6">
               <Link
                 onClick={() => navigate(-1)}
@@ -785,7 +355,7 @@ const BeneficiaryDetails = () => {
                 Back
               </Link>
               <Link
-                to={"/fundraiser"}
+                to={"/hospital"}
                 className="bg-[#E7000B] text-white px-4 sm:px-6 py-2 rounded-full hover:bg-red-600 transition"
               >
                 Continue
@@ -794,38 +364,6 @@ const BeneficiaryDetails = () => {
           </div>
         </div>
       </div>
-
-      {/* Modal for Form */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black/50 backdrop-opacity-40 flex items-center justify-center z-50 ">
-          <div className="example bg-white rounded-2xl  p-4 sm:p-6 max-w-lg w-full max-h-[80vh] overflow-y-auto relative">
-            <button
-              onClick={closeModal}
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"
-            >
-              &times;
-            </button>
-            <h3 className="text-lg sm:text-xl font-semibold mb-4">
-              Beneficiary Details for {selectedOption}
-            </h3>
-            {renderFields()}
-            <div className="flex justify-end gap-3 mt-6">
-              <button
-                onClick={closeModal}
-                className="bg-gray-300 text-black px-4 py-2 rounded-full hover:bg-gray-400 transition"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={closeModal}
-                className="bg-[#E7000B] text-white px-4 py-2 rounded-full hover:bg-red-600 transition"
-              >
-                Save
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 };

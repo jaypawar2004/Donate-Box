@@ -7,7 +7,7 @@ const TextEditor = () => {
      
   return (
     <>
-<div className='w-[50vw] z'>
+<div className='w-[50vw]'>
 <JoditEditor
 
         ref={editor}

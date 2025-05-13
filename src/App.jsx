@@ -23,12 +23,15 @@ import ElaborateCauseDetails from "./Fundraiser/ElaborateCauseDetails";
 import UserEditDetails from "./UserAccess/UserEditDetails";
 import TextEditor from "./TextEditor/TextEditor";
 import UserDonate from "./UserAccess/UserDonate";
+import AllBlogPage from "./BlogPages/AllBlogPage";
+import HospitalDetails from "./Fundraiser/HospitalDetails";
+
 
 function App() {
   const location = useLocation();
 
   // Paths jahan NavBar aur Footer nahi dikhani hai
-  const hideLayoutPaths = ["/fundraiser", "/beneficiary", "/elaborate_cause_details"];
+  const hideLayoutPaths = ["/fundraiser", "/beneficiary", "/elaborate_cause_details" ,"/hospital"];
 
   const shouldHideLayout = hideLayoutPaths.includes(location.pathname);
 
@@ -62,6 +65,8 @@ function App() {
           <Route path="/beneficiary" element={<BeneficiaryDetails />} />
           <Route path="/user-edit-details" element={<UserEditDetails />} />
           <Route path="/text-editor" element={<TextEditor />} />
+          <Route path="/all_blog_page" element={<AllBlogPage />} />
+          <Route path="/hospital" element={<HospitalDetails />} />
           <Route
             path="/elaborate_cause_details"
             element={<ElaborateCauseDetails />}

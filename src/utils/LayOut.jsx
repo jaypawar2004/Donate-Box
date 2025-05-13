@@ -6,7 +6,7 @@ import TextMarquee from "../components/TextMarquee";
 import Cause from '../Pages/Cause';
 import About from '../Pages/About';
 import WallOfLove from '../Pages/WallOfLove';
-import Blog from '../Pages/Blog';
+import Blog from '../BlogPages/Blog';
 import GetInTouch from '../Pages/GetInTouch';
 import Footer from '../components/Footer';
 import DonateFillter from '../components/DonateFillter';
@@ -28,7 +28,7 @@ const LayOut = () => {
         <div className='w-full px-10 bg-[#FDF5F3]'>
 
         <Cards />
-        <Cards />
+     
         </div>
         <About />
         <WallOfLove />

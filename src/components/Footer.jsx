@@ -20,25 +20,25 @@ const Footer = () => {
           <h3 className="font-semibold text-lg mb-4">Information</h3>
           <ul className="space-y-2">
             <li>
-              <Link to={'/about-us'}>
-              <a href="" className="hover:underline">
+              <Link to={'/about-us'} className="hover:underline">
                 About Us
-              </a>
+              
               </Link>
             </li>
             <li>
               <Link to={"/privacy_policy"}
+              className="hover:underline"
               >
-              <a href="" className="hover:underline">
+              
                 Privacy Policy
-              </a>
+        
               </Link>
             </li>
             <li>
-              <Link to={"/terms_and_conditions"}>
-              <a href="#" className="hover:underline">
+              <Link to={"/terms_and_conditions"} className="hover:underline">
+              
                 Terms & Conditions
-              </a>
+  
               </Link>
             </li>
           </ul>
@@ -107,15 +107,18 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
           <ul className="space-y-3">
-            <li className="flex items-center space-x-2">
+            <li className="flex items-center space-x-2 cursor-pointer">
               <Mail size={18} />
+              <a href="https://mail.google.com/">
+
               <span>trashimanoriya@gmail.com</span>
+              </a>
             </li>
-            <li className="flex items-center space-x-2">
+            <li className="flex items-center space-x-2 cursor-pointer">
               <Phone size={18} />
               <span>+91 8305425799</span>
             </li>
-            <li className="flex items-center space-x-2">
+            <li className="flex items-center space-x-2 cursor-pointer">
               <MessageCircle size={18} />
               <span>+91 8305425799</span>
             </li>

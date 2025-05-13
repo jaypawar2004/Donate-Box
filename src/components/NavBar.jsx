@@ -14,7 +14,7 @@ const NavBar = () => {
     }`;
 
   return (
-    <nav className="bg-white fixed shadow-orange-300 shadow-md z-20 w-full">
+    <nav className="bg-white fixed shadow-orange-300 shadow-md z-20 top-0 w-full">
       <div className="max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-10 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" onClick={() => setIsOpen(false)}>
@@ -39,7 +39,7 @@ const NavBar = () => {
           <Link to="/contact" className={navItemClass("/contact")}>
             Contact Us
           </Link>
-          <Link to="/beneficiary">
+          <Link to="/fundraiser">
             <button className="bg-red-600 cursor-pointer text-white px-4 py-2 rounded hover:bg-red-700 transition">
               Start a fundraiser
             </button>

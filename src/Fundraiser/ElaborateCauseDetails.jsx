@@ -19,24 +19,117 @@ const ElaborateCauseDetails = () => {
         <h1 className="text-center font-bold text-2xl">Elaborate Cause Details</h1>
       <div className="max-w-2xl mx-auto mt-8 space-y-6">
         {/* Upload Cover Photo */}
-        <div class="grid gap-2">
-            <img className="w-[200px] h-[200px] m-auto object-center object-cover" src="https://thumb.ac-illust.com/b1/b170870007dfa419295d949814474ab2_t.jpeg" alt="Upload Cover Photo" />
-<h4 class="text-center text-gray-900 text-sm font-medium leading-snug">Upload Cover Photo</h4>
-<div class="flex items-center justify-center">
-<label>
-  <input type="file" hidden />
-  <div class="flex w-28 h-9 px-2 flex-col bg-[#E7000B] rounded-full shadow text-white text-xs font-semibold leading-4 items-center justify-center cursor-pointer focus:outline-none">Choose File</div>
-</label>
-</div>
-</div>
+        {/* <div className="flex items-center gap-2">
+          <label className="cursor-pointer">
+            <img
+              className="w-[50px] h-[50px] object-center object-cover"
+              src="https://thumb.ac-illust.com/b1/b170870007dfa419295d949814474ab2_t.jpeg"
+              alt="Upload Cover Photo"
+            />
+            <input type="file" hidden />
+          </label>
+          <h4 className="text-gray-900 text-sm font-medium leading-snug">
+            Upload Cover Photo
+          </h4>
+        </div> */}
+
+        <div className="space-y-6 w-full">
+          {/* Document Uploads */}
+          <div className="space-y-3 w-full">
+            <label className="text-lg text-gray-700 font-bold">Upload Documents</label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-600 mb-1">Estimation letter by hospital</label>
+                <label className="cursor-pointer">
+                  <input type="file" accept=".pdf" hidden />
+                  <div className="w-full px-4 py-2 border border-red-400 rounded-md hover:bg-red-50 transition-colors">
+                    <div className="flex items-center justify-center gap-2">
+                      <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                      </svg>
+                      <span className="text-sm">Upload PDF</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-600 mb-1">Medical Bills</label>
+                <label className="cursor-pointer">
+                  <input type="file" accept=".pdf" hidden />
+                  <div className="w-full px-4 py-2 border border-red-400 rounded-md hover:bg-red-50 transition-colors">
+                    <div className="flex items-center justify-center gap-2">
+                      <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                      </svg>
+                      <span className="text-sm">Upload PDF</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-600 mb-1">Medical Reports</label>
+                <label className="cursor-pointer">
+                  <input type="file" accept=".pdf" hidden />
+                  <div className="w-full px-4 py-2 border border-red-400 rounded-md hover:bg-red-50 transition-colors">
+                    <div className="flex items-center justify-center gap-2">
+                      <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                      </svg>
+                      <span className="text-sm">Upload PDF</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          {/* Media Uploads */}
+          <div className="space-y-3 w-full">
+            <label className="font-bold text-lg text-gray-700">Upload Media</label>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-600 mb-1">Images</label>
+                <label className="cursor-pointer">
+                  <input type="file" accept="image/*" multiple hidden />
+                  <div className="w-full px-4 py-2 border border-red-400 rounded-md hover:bg-red-50 transition-colors">
+                    <div className="flex items-center justify-center gap-2">
+                      <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      <span className="text-sm">Upload Images</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+
+              <div className="flex flex-col">
+                <label className="text-sm text-gray-600 mb-1">Video</label>
+                <label className="cursor-pointer">
+                  <input type="file" accept="video/*" hidden />
+                  <div className="w-full px-4 py-2 border border-red-400 rounded-md hover:bg-red-50 transition-colors">
+                    <div className="flex items-center justify-center gap-2">
+                      <svg className="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                      </svg>
+                      <span className="text-sm">Upload Video</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
 
         {/* Name Your Fundraiser */}
         <div className="space-y-2">
-          <label className="font-medium text-gray-700">Name your fundraiser</label>
+          <label className="font-bold text-lg text-gray-700">Name your fundraiser</label>
           <input
             type="text"
             placeholder="Eg.: Help Hari fight cancer"
-            className="w-full border rounded px-3 py-2"
+            className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
           />
         </div>
         </div>

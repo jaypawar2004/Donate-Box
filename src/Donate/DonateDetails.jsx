@@ -169,7 +169,7 @@ const DonateDetails = ({ strokeWidth = 8, percentage = 40 } ) => {
             </div>
 
            {/* Buttons Section */}
-  <div className="w-full h-[200px] flex items-center text-center justify-between mt-15 mb-15 lg:w-full lg:h-[200px] lg:flex lg:items-center lg:text-center lg:justify-between lg:mt-15 lg:mb-15 ">
+  <div className="w-full h-[200px] flex items-center text-center justify-between mt-15 mb-15 lg:w-full lg:h-[200px] lg:flex lg:items-center lg:text-center lg:justify-evenly lg:mt-15 lg:mb-15 ">
     {["Story", "Document", "Updates"].map((btn, index) => (
       <button
         key={index}
