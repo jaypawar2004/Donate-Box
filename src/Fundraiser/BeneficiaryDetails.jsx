@@ -310,19 +310,19 @@ const BeneficiaryDetails = () => {
 
           <div className="space-y-4">
             {/* Three buttons: My Self, Other, NGO */}
-            <div className="flex items-center justify-center flex-col sm:flex-row gap-4">
+            <div className="flex items-center justify-center lg:flex-row gap-4">
               <button
-                className={`py-3 px-10 rounded-md border transition text-sm sm:text-base font-medium ${
+                className={`lg:py-3 lg:px-10 py-3 px-5 rounded-md border transition text-sm sm:text-base font-medium ${
                   selectedOption === "my self"
                     ? "bg-[#E7000B] text-white"
                     : "border-red-200 hover:border-red-500"
                 }`}
                 onClick={() => handleSelection("my self")}
               >
-                👤 My Self
+                 My Self
               </button>
               <button
-                className={`py-3 px-10 rounded-md border transition text-sm sm:text-base font-medium ${
+                className={`lg:py-3 lg:px-10 py-3 px-5 rounded-md border transition text-sm sm:text-base font-medium ${
                   selectedOption === "Others"
                     ? "bg-[#E7000B] text-white"
                     : "border-red-200 hover:border-red-500"
@@ -332,7 +332,7 @@ const BeneficiaryDetails = () => {
                 👥 Other
               </button>
               <button
-                className={`py-3 px-10 rounded-md border transition text-sm sm:text-base font-medium ${
+                className={`lg:py-3 lg:px-10 py-3 px-5 rounded-md border transition text-sm sm:text-base font-medium ${
                   selectedOption === "Registered NGO"
                     ? "bg-[#E7000B] text-white"
                     : "border-red-200 hover:border-red-500"

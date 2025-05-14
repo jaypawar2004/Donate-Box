@@ -51,7 +51,7 @@ const BasicDetails = () => {
           </p>
 
           {/* Cause Buttons */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6 ml-[20%]">
+          <div className="grid grid-cols-3 lg:grid-cols-4 gap-4 mb-6 lg:ml-[20%]">
             {causes.map((item) => (
               <button
                 key={item}
@@ -220,7 +220,7 @@ const BasicDetails = () => {
 
                   <div>
                     <label className="block mb-1 text-sm text-gray-700">
-                      Campaign Name
+                      Campaingn Name
                     </label>
                     <input
                       type="text"
