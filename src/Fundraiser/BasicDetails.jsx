@@ -83,59 +83,34 @@ const BasicDetails = () => {
                 Medical Fundraiser Details
               </h1>
               <div>
-                <label className="block mb-1 text-sm text-gray-700">
-                  Beneficiary Name
-                </label>
-                <input
-                  type="text"
-                  name="beneficiaryName"
-                  value={formData.beneficiaryName}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-                  placeholder="Enter beneficiary name"
-                />
-              </div>
+                    <label className="block mb-1 text-sm text-gray-700">
+                      Estimated Cost
+                    </label>
+                    <input
+                      type="number"
+                      name="estimatedCost"
+                      value={formData.estimatedCost}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                      placeholder="Enter estimated cost"
+                    />
+                  </div>
 
-             
+                  <div>
+                    <label className="block mb-1 text-sm text-gray-700">
+                      Campaingn Name
+                    </label>
+                    <input
+                      type="text"
+                      name="campaignName"
+                      value={formData.campaignName}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                      placeholder="Enter campaign name"
+                    />
+                  </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block mb-1 text-sm text-gray-700">
-                    State
-                  </label>
-                  <select
-                    name="state"
-                    value={formData.state}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-                  >
-                    <option value="">Select State</option>
-                    <option value="maharashtra">Maharashtra</option>
-                    <option value="delhi">Delhi</option>
-                    <option value="karnataka">Karnataka</option>
-                    {/* Add more states as needed */}
-                  </select>
-                </div>
-                <div>
-                  <label className="block mb-1 text-sm text-gray-700">
-                    City
-                  </label>
-                  <select
-                    name="city"
-                    value={formData.city}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-                  >
-                    <option value="">Select City</option>
-                    <option value="mumbai">Mumbai</option>
-                    <option value="delhi">Delhi</option>
-                    <option value="bangalore">Bangalore</option>
-                    {/* Add more cities as needed */}
-                  </select>
-                </div>
-              </div>
-
-              <div className='mt-4'>
+                  <div className='mt-4'>
                 <label className="block mb-1 text-sm text-gray-700">Phone Number</label>
                 <div className="flex">
                   <span className="px-4 py-2 bg-gray-200 border border-r-0 rounded-l-md text-gray-700">+91</span>
@@ -150,33 +125,19 @@ const BasicDetails = () => {
                 </div>
               </div>
 
-              <div>
-                <label className="block mb-1 text-sm text-gray-700">
-                  Beneficiary Address
-                </label>
-                <input
-                  name="beneficiaryAddress"
-                  value={formData.beneficiaryAddress}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-                  placeholder="Enter complete address"
-                  rows="3"
-                />
-              </div>
-
-              <div>
-                <label className="block mb-1 text-sm text-gray-700">Age</label>
-                <input
-                  type="number"
-                  name="age"
-                  value={formData.age}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-                  placeholder="Enter age"
-                  min="0"
-                  max="120"
-                />
-              </div>
+                  <div>
+                    <label className="block mb-1 text-sm text-gray-700">
+                      Email ID
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                      placeholder="Enter email ID"
+                    />
+                  </div>
             </div>
           )}
 
