@@ -329,7 +329,7 @@ const BeneficiaryDetails = () => {
                 }`}
                 onClick={() => handleSelection("Others")}
               >
-                👥 Other
+                 Other
               </button>
               <button
                 className={`lg:py-3 lg:px-10 py-3 px-5 rounded-md border transition text-sm sm:text-base font-medium ${
@@ -339,7 +339,7 @@ const BeneficiaryDetails = () => {
                 }`}
                 onClick={() => handleSelection("Registered NGO")}
               >
-                🏢 NGO
+                 NGO
               </button>
             </div>
 
