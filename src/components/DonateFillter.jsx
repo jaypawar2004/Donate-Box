@@ -61,7 +61,7 @@ import React, { useRef, useState } from 'react';
 
 // Sample data for donation campaigns
 const campaigns = [
-  // { id: 1, title: 'Save the Tigers', category: 'ANIMALS', description: 'Help protect endangered tigers.' },
+  // { id: 1, title: 'Save the Tigers', category: 'ANIMALS', description: 'Help protect endangered tigers.', images:'https://plus.unsplash.com/premium_photo-1746718185563-9d3782845c06?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
   // { id: 2, title: 'School Supplies for Kids', category: 'EDUCATION', description: 'Provide books and supplies for underprivileged children.' },
   // { id: 3, title: 'Feed the Hungry', category: 'HUNGER', description: 'Support food distribution programs.' },
   // { id: 4, title: 'Support Orphanages', category: 'CHILDREN', description: 'Help children in need with care and support.' },
@@ -145,6 +145,7 @@ const DonateFilter = () => {
                 key={campaign.id}
                 className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
               >
+                <img className='w-[100%] h-[200px] object-cover object-center' src={`${campaign.images}`} alt="" />
                 <h4 className="text-xl font-medium text-gray-800">{campaign.title}</h4>
                 <p className="text-gray-600 mt-2">{campaign.description}</p>
                 <p className="text-sm text-gray-500 mt-3">Category: {campaign.category}</p>

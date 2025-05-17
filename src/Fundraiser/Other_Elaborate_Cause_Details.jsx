@@ -17,7 +17,7 @@ const ElaborateCauseDetails = () => {
 <h2>Setup fundraiser</h2>
 </nav>
    
-    <div className="max-w-3xl mx-auto bg-white p-6 rounded-md shadow">
+    <div className="max-w-3xl mx-auto bg-white p-8 rounded-md shadow">
         <h1 className="text-center font-bold text-2xl">Elaborate Cause Details</h1>
       <div className="max-w-2xl mx-auto mt-8 space-y-6">
         {/* Upload Cover Photo */}
@@ -41,7 +41,7 @@ const ElaborateCauseDetails = () => {
             <label className="text-lg text-gray-700 font-bold">Upload Documents</label>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col">
-                <label className="text-sm text-gray-600 mb-1">Estimation letter by hospital</label>
+                <label className="text-sm text-gray-600 mb-1">Supporting Document 1</label>
                 <label className="cursor-pointer">
                   <input type="file" accept=".pdf" hidden />
                   <div className="w-full px-4 py-2 border border-red-400 rounded-md hover:bg-red-50 transition-colors">
@@ -56,7 +56,7 @@ const ElaborateCauseDetails = () => {
               </div>
 
               <div className="flex flex-col">
-                <label className="text-sm text-gray-600 mb-1">Medical Bills</label>
+                <label className="text-sm text-gray-600 mb-1">Supporting Document 2</label>
                 <label className="cursor-pointer">
                   <input type="file" accept=".pdf" hidden />
                   <div className="w-full px-4 py-2 border border-red-400 rounded-md hover:bg-red-50 transition-colors">
@@ -69,7 +69,7 @@ const ElaborateCauseDetails = () => {
                   </div>
                 </label>
               </div>
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <label className="text-sm text-gray-600 mb-1">Medical Reports</label>
                 <label className="cursor-pointer">
                   <input type="file" accept=".pdf" hidden />
@@ -82,7 +82,7 @@ const ElaborateCauseDetails = () => {
                     </div>
                   </div>
                 </label>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -106,7 +106,7 @@ const ElaborateCauseDetails = () => {
               </div>
 
               <div className="flex flex-col">
-                <label className="text-sm text-gray-600 mb-1">Video</label>
+                <label className="text-sm text-gray-600 mb-1">Video (Optional)</label>
                 <label className="cursor-pointer">
                   <input type="file" accept="video/*" hidden />
                   <div className="w-full px-4 py-2 border border-red-400 rounded-md hover:bg-red-50 transition-colors">
@@ -127,7 +127,7 @@ const ElaborateCauseDetails = () => {
 
         {/* Name Your Fundraiser */}
         <div className="space-y-2">
-          <label className="font-bold text-lg text-gray-700">Name your fundraiser</label>
+          <label className="font-bold text-lg text-gray-700">Campaign Title</label>
           <input
             type="text"
             placeholder="Eg.: Help Hari fight cancer"
@@ -136,6 +136,7 @@ const ElaborateCauseDetails = () => {
         </div>
         </div>
 <br />
+        <h1 className="font-bold text-xl">Description</h1>
       <JoditEditor
         ref={editor}
         value={content}

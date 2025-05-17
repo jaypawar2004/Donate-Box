@@ -12,7 +12,7 @@ const BasicDetails = () => {
     phone: "",
   });
 
-  const causes = ["medical", "NGO", "others"];
+  const causes = ["medical", "others"];
   const otherSubCauses = [
     "Children",
     "Disability",
@@ -34,7 +34,9 @@ const BasicDetails = () => {
     <>
       {/* Top Bar */}
       <div className="w-full h-[80px] px-10 flex items-center gap-x-7 shadow-xl/20 shadow-zinc-500 bg-white border-b">
+       <Link to={'/'}>
         <img className="w-[70px]" src="/images/logo.png" alt="logo" />
+       </Link>
         <h1 className="text-2xl font-bold">Setup fundraiser</h1>
       </div>
 
@@ -51,7 +53,7 @@ const BasicDetails = () => {
           </p>
 
           {/* Cause Buttons */}
-          <div className="grid grid-cols-3 lg:grid-cols-4 gap-4 mb-6 lg:ml-[20%]">
+          <div className="grid grid-cols-3 lg:grid-cols-4 gap-4 mb-6 lg:ml-[33%]">
             {causes.map((item) => (
               <button
                 key={item}
@@ -64,7 +66,7 @@ const BasicDetails = () => {
                   setFormData({
                     ...formData,
                     cause: item,
-                    subCause: "",
+                    subCause: "Children",
                     amount: "",
                     campaignName: "",
                     email: "",
@@ -138,6 +140,21 @@ const BasicDetails = () => {
                       placeholder="Enter email ID"
                     />
                   </div>
+                   {/* Navigation Buttons */}
+              <div className="mt-6 text-end space-x-5">
+            <Link
+              onClick={() => navigate(-1)}
+              className="bg-[#E7000B] text-white px-8 py-3 rounded-full hover:bg-[#E7000B] transition"
+            >
+              Back
+            </Link>
+            <Link
+              to={"/beneficiary"}
+              className="bg-[#E7000B] text-white px-8 py-3 rounded-full hover:bg-[#E7000B] transition"
+            >
+              Continue
+            </Link>
+          </div>
             </div>
           )}
 
@@ -223,6 +240,21 @@ const BasicDetails = () => {
                   </div>
                 </>
               )}
+                 {/* Navigation Buttons */}
+              <div className="mt-6 text-end space-x-5">
+            <Link
+              onClick={() => navigate(-1)}
+              className="bg-[#E7000B] text-white px-8 py-3 rounded-full hover:bg-[#E7000B] transition"
+            >
+              Back
+            </Link>
+            <Link
+              to={"/otherP2"}
+              className="bg-[#E7000B] text-white px-8 py-3 rounded-full hover:bg-[#E7000B] transition"
+            >
+              Continue
+            </Link>
+          </div>
             </div>
           )}
 
@@ -451,21 +483,8 @@ const BasicDetails = () => {
             </div>
           )}
 
-          {/* Navigation Buttons */}
-          <div className="mt-6 text-end space-x-5">
-            <Link
-              onClick={() => navigate(-1)}
-              className="bg-[#E7000B] text-white px-8 py-3 rounded-full hover:bg-[#E7000B] transition"
-            >
-              Back
-            </Link>
-            <Link
-              to={"/beneficiary"}
-              className="bg-[#E7000B] text-white px-8 py-3 rounded-full hover:bg-[#E7000B] transition"
-            >
-              Continue
-            </Link>
-          </div>
+       
+         
         </div>
       </div>
     </>

@@ -44,12 +44,72 @@ const Cards = (id) => {
       achieved: "₹32,890",
       subtitle: "Turning Struggles into Strength - Helping Others Like Her",
     },
+    {
+      id: 5,
+      image: "https://plus.unsplash.com/premium_photo-1744826574464-0fc82fc6903e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: "Neurofibromatosis A Genetic Disorder Causing Tumor Growth",
+      daysLeft: "3 Days Left to Go",
+      donors: 235,
+      goal: "₹51,224",
+      achieved: "₹32,890",
+      subtitle: "Turning Struggles into Strength - Helping Others Like Her",
+    },
+    {
+      id: 6,
+      image: "https://plus.unsplash.com/premium_photo-1699114250038-1c6048f12264?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: "Neurofibromatosis A Genetic Disorder Causing Tumor Growth",
+      daysLeft: "3 Days Left to Go",
+      donors: 235,
+      goal: "₹51,224",
+      achieved: "₹32,890",
+      subtitle: "Turning Struggles into Strength - Helping Others Like Her",
+    },
+    {
+      id: 7,
+      image: "https://plus.unsplash.com/premium_photo-1744826574464-0fc82fc6903e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: "Neurofibromatosis A Genetic Disorder Causing Tumor Growth",
+      daysLeft: "3 Days Left to Go",
+      donors: 235,
+      goal: "₹51,224",
+      achieved: "₹32,890",
+      subtitle: "Turning Struggles into Strength - Helping Others Like Her",
+    },
+    {
+      id: 8,
+      image: "https://plus.unsplash.com/premium_photo-1744826574464-0fc82fc6903e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: "Neurofibromatosis A Genetic Disorder Causing Tumor Growth",
+      daysLeft: "3 Days Left to Go",
+      donors: 235,
+      goal: "₹51,224",
+      achieved: "₹32,890",
+      subtitle: "Turning Struggles into Strength - Helping Others Like Her",
+    },
+    {
+      id: 9,
+      image: "https://plus.unsplash.com/premium_photo-1744826574464-0fc82fc6903e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: "Neurofibromatosis A Genetic Disorder Causing Tumor Growth",
+      daysLeft: "3 Days Left to Go",
+      donors: 235,
+      goal: "₹51,224",
+      achieved: "₹32,890",
+      subtitle: "Turning Struggles into Strength - Helping Others Like Her",
+    },
+    {
+      id: 10,
+      image: "https://plus.unsplash.com/premium_photo-1744826574464-0fc82fc6903e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      title: "Neurofibromatosis A Genetic Disorder Causing Tumor Growth",
+      daysLeft: "3 Days Left to Go",
+      donors: 235,
+      goal: "₹51,224",
+      achieved: "₹32,890",
+      subtitle: "Turning Struggles into Strength - Helping Others Like Her",
+    },
    
     
     // Add more cards if needed
   ];
 
-  const [visibleCards, setVisibleCards] = useState(9); // Initially show 9 cards (3x3)
+  const [visibleCards, setVisibleCards] = useState(8); // Initially show 9 cards (3x3)
 
   const showAllCards = () => {
     setVisibleCards(cardData.length); // Show all cards on "View All" click
@@ -58,7 +118,7 @@ const Cards = (id) => {
   return (
     <div className="container mx-auto py-5">
     
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {cardData.slice(0, visibleCards).map((card) => (
           <div
             key={card.id}

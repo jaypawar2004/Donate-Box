@@ -44,6 +44,11 @@ const NavBar = () => {
               Start a fundraiser
             </button>
           </Link>
+          <Link to="/ngo">
+            <button className="bg-red-600 cursor-pointer text-white px-4 py-2 rounded hover:bg-red-700 transition">
+            Collabrate as NGO
+            </button>
+          </Link>
           <Link to="/login">
             <button className="bg-red-600 cursor-pointer text-white px-4 py-2 rounded hover:bg-red-700 transition">
               Login / Signup

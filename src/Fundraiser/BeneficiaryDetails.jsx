@@ -40,8 +40,8 @@ const BeneficiaryDetails = () => {
     switch (selectedOption) {
       case "my self":
         return (
-          <div className="mt-6 border-t pt-6">
-            <div className="mt-6">
+          <div className="">
+            <div className="">
               <label className="block mb-2">Beneficiary Name</label>
               <input
                 type="text"
@@ -112,8 +112,8 @@ const BeneficiaryDetails = () => {
         );
       case "Others":
         return (
-          <div className="mt-6 border-t pt-6">
-            <div className="mt-4">
+          <div className="">
+            <div className="">
               <label className="block mb-2">Beneficiary Name & Relation</label>
               <div className="flex gap-2">
                 <input
@@ -288,11 +288,13 @@ const BeneficiaryDetails = () => {
   return (
     <>
       <div className="w-full h-[80px] px-4 sm:px-10 flex items-center gap-x-4 sm:gap-x-7 shadow-2xl border-b shadow-zinc-500 bg-white">
+        <Link to={'/'}>
         <img
           className="w-[50px] sm:w-[70px]"
           src="/images/logo.png"
           alt="Logo"
-        />
+          />
+          </Link>
         <h1 className="text-xl sm:text-2xl font-bold">Setup fundraiser</h1>
       </div>
 
@@ -311,27 +313,16 @@ const BeneficiaryDetails = () => {
           <div className="space-y-4">
             {/* Three buttons: My Self, Other, NGO */}
             <div className="flex items-center justify-center lg:flex-row gap-4">
-              <button
-                className={`lg:py-3 lg:px-10 py-3 px-5 rounded-md border transition text-sm sm:text-base font-medium ${
-                  selectedOption === "my self"
-                    ? "bg-[#E7000B] text-white"
-                    : "border-red-200 hover:border-red-500"
-                }`}
-                onClick={() => handleSelection("my self")}
+              <select 
+                className="w-full px-4 py-2 border border-red-400 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                value={selectedOption}
+                onChange={(e) => handleSelection(e.target.value)}
               >
-                 My Self
-              </button>
-              <button
-                className={`lg:py-3 lg:px-10 py-3 px-5 rounded-md border transition text-sm sm:text-base font-medium ${
-                  selectedOption === "Others"
-                    ? "bg-[#E7000B] text-white"
-                    : "border-red-200 hover:border-red-500"
-                }`}
-                onClick={() => handleSelection("Others")}
-              >
-                 Other
-              </button>
-              <button
+                <option value="">Select Beneficiary</option>
+                <option value="my self">My Self</option>
+                <option value="Others">Other then self</option>
+              </select>
+              {/* <button
                 className={`lg:py-3 lg:px-10 py-3 px-5 rounded-md border transition text-sm sm:text-base font-medium ${
                   selectedOption === "Registered NGO"
                     ? "bg-[#E7000B] text-white"
@@ -340,7 +331,7 @@ const BeneficiaryDetails = () => {
                 onClick={() => handleSelection("Registered NGO")}
               >
                  NGO
-              </button>
+              </button> */}
             </div>
 
             {/* Form Section */}

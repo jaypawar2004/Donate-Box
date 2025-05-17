@@ -6,7 +6,9 @@ const HospitalDetails = () => {
   return (
     <>
       <div className="w-full h-[80px] px-10 flex items-center gap-x-7 shadow-xl/20 shadow-zinc-500 bg-white border-b">
+       <Link to={'/'}>
         <img className="w-[70px]" src="/images/logo.png" alt="logo" />
+       </Link>
         <h1 className="text-2xl font-bold">Setup fundraiser</h1>
       </div>
 

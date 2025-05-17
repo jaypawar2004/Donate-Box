@@ -6,11 +6,12 @@ import TextMarquee from "../components/TextMarquee";
 import Cause from '../Pages/Cause';
 import About from '../Pages/About';
 import WallOfLove from '../Pages/WallOfLove';
-import Blog from '../BlogPages/Blog';
+import BlogCards from '../BlogPages/BlogCards';
 import GetInTouch from '../Pages/GetInTouch';
 import Footer from '../components/Footer';
 import DonateFillter from '../components/DonateFillter';
 import Cards from '../components/Cards';
+import Blog from '../BlogPages/Blog';
 
 
 const LayOut = () => {
@@ -25,7 +26,7 @@ const LayOut = () => {
         <DonateFillter />
 
         {/* <Cause /> */}
-        <div className='w-full px-10 bg-[#FDF5F3]'>
+        <div className='lg:w-full lg:px-10 lg:bg-[#FDF5F3]'>
 
         <Cards />
      
